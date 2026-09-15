@@ -101,8 +101,8 @@ export async function downloadModelPdf(model: Model, lang: Lang) {
     pdf.text(wrapped, margin + indent, y);
     y += height;
   };
-  const heading = (value: string) => {
-    ensure(14);
+  const heading = (value: string, followingHeight = 0) => {
+    ensure(14 + followingHeight);
     y += 4;
     pdf.setFontSize(12);
     pdf.setTextColor(151, 116, 56);
@@ -176,7 +176,7 @@ export async function downloadModelPdf(model: Model, lang: Lang) {
   }
 
   if (model.looks.length) {
-    heading(text.styling);
+    heading(text.styling, 45);
     for (const look of model.looks) {
       const lookLines = lines(look.text, contentWidth - 8, 8.5);
       const imageRows = look.items.length ? Math.ceil(look.items.length / 4) : 0;
