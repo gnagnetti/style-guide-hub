@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, Award, CheckCircle2, HelpCircle, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowLeft, Award, CheckCircle2, Download, HelpCircle, Home, LoaderCircle, Sparkles, TrendingUp } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import { ImageTile } from "@/components/ImageTile";
 import { Lightbox } from "@/components/Lightbox";
 import { heroImage, loadModel, type Model } from "@/lib/models";
@@ -47,11 +48,24 @@ function ModelPage() {
   const { model } = Route.useLoaderData() as { model: Model };
   const { lang, t } = useLanguage();
   const [zoom, setZoom] = useState<{ src: string; caption: string } | null>(null);
+  const [pdfState, setPdfState] = useState<"idle" | "loading" | "error">("idle");
 
   const hero = heroImage(model);
   const advice = model.advice[lang].length ? model.advice[lang] : model.advice.en;
   const objections = model.objections[lang].length ? model.objections[lang] : model.objections.ru;
   const description = model.description[lang] || model.description.en;
+
+  const handlePdfDownload = async () => {
+    if (pdfState === "loading") return;
+    setPdfState("loading");
+    try {
+      const { downloadModelPdf } = await import("@/lib/model-pdf");
+      await downloadModelPdf(model, lang);
+      setPdfState("idle");
+    } catch {
+      setPdfState("error");
+    }
+  };
 
   return (
     <main className="mx-auto max-w-2xl px-4 pt-6 pb-16">
@@ -159,7 +173,7 @@ function ModelPage() {
         <Section title={t("advice")}>
           <div className="space-y-3">
             {advice.map((a, i) => {
-              const Icon = adviceIcons[i % adviceIcons.length]!;
+              const Icon = adviceIcons[i % adviceIcons.length] ?? Sparkles;
               return (
                 <div key={i} className="rounded-sm border border-border bg-card p-4 shadow-sm">
                   <div className="flex items-center gap-2">
@@ -204,6 +218,27 @@ function ModelPage() {
           </Accordion>
         </Section>
       )}
+
+      <nav className="mt-12 grid gap-3 border-t border-border pt-6 sm:grid-cols-2" aria-label="Model actions">
+        <Button type="button" size="lg" onClick={handlePdfDownload} disabled={pdfState === "loading"}>
+          {pdfState === "loading" ? (
+            <LoaderCircle className="animate-spin" aria-hidden />
+          ) : (
+            <Download aria-hidden />
+          )}
+          {pdfState === "loading" ? t("preparingPdf") : t("downloadPdf")}
+        </Button>
+        <Button asChild variant="outline" size="lg">
+          <Link to="/">
+            <Home aria-hidden /> {t("returnHome")}
+          </Link>
+        </Button>
+        {pdfState === "error" && (
+          <p className="text-sm text-destructive sm:col-span-2" role="alert">
+            {t("pdfError")}
+          </p>
+        )}
+      </nav>
 
       <Lightbox src={zoom?.src ?? null} caption={zoom?.caption ?? ""} onClose={() => setZoom(null)} />
     </main>

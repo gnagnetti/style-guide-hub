@@ -23,6 +23,10 @@ const strings = {
   advice: { en: "Sales Advice", ru: "Советы по продажам" },
   objections: { en: "Objection Handling", ru: "Управление возражениями" },
   back: { en: "All models", ru: "Все модели" },
+  downloadPdf: { en: "Download PDF", ru: "Скачать PDF" },
+  preparingPdf: { en: "Preparing PDF…", ru: "Подготовка PDF…" },
+  pdfError: { en: "The PDF could not be created. Please try again.", ru: "Не удалось создать PDF. Повторите попытку." },
+  returnHome: { en: "Back to all models", ru: "Вернуться ко всем моделям" },
   noImage: { en: "No image", ru: "Нет изображения" },
   intro: {
     en: "Choose a model to open its full training sheet: description, colours, total looks, sales advice and objection handling.",
