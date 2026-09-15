@@ -217,13 +217,20 @@ export async function downloadModelPdf(model: Model, lang: Lang) {
 
   const advice = model.advice[lang].length ? model.advice[lang] : model.advice.en;
   if (advice.length) {
-    heading(text.advice, 24);
+    const firstAdvice = advice[0] ?? "";
+    heading(text.advice, lines(`1. ${firstAdvice}`, contentWidth, 9).length * 3.8 + 8);
     advice.forEach((item, index) => paragraph(`${index + 1}. ${item}`));
   }
 
   const objections = model.objections[lang].length ? model.objections[lang] : model.objections.ru;
   if (objections.length) {
-    heading(text.objections, 30);
+    const firstObjection = objections[0];
+    const firstObjectionHeight = firstObjection
+      ? lines(`1. ${firstObjection.q}`, contentWidth, 9).length * 3.8 +
+        lines(`${text.answer}: ${firstObjection.a}`, contentWidth - 4, 8.5).length * 3.6 +
+        12
+      : 20;
+    heading(text.objections, firstObjectionHeight);
     objections.forEach((item, index) => {
       paragraph(`${index + 1}. ${item.q}`, { size: 9, gap: 2 });
       paragraph(`${text.answer}: ${item.a}`, { indent: 4, size: 8.5, gap: 6 });
