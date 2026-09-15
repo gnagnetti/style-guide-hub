@@ -79,11 +79,19 @@ def lookup(name: str, codes) -> str | None:
 # ---------------------------------------------------------------- text tidying
 PAREN_URL = re.compile(r"\(\s*(?:https?://)[^()]*(?:\([^()]*\)[^()]*)*\)")
 BARE_URL = re.compile(r"https?://\S+")
+# Markdown image syntax: ![...](url) or ![](url)
+MARKDOWN_IMAGE = re.compile(r"!\[([^\]]*)\]\([^)]*\)")
+# HTML/Word image directives with attributes: ![](media/...) or similar with {...}
+WORD_IMAGE_DIRECTIVE = re.compile(r"\.?\s*!\[([^\]]*)\]\([^)]+\)\s*\{[^}]*\}")
 
 
 def clean(text: str) -> str:
     t = PAREN_URL.sub("", text)
     t = BARE_URL.sub("", t)
+    # Remove Word/Markdown image directives first (they may contain {...} attributes)
+    t = WORD_IMAGE_DIRECTIVE.sub("", t)
+    # Remove any remaining Markdown image syntax
+    t = MARKDOWN_IMAGE.sub("", t)
     t = re.sub(r"\(\s*(nan|Данные отсутствуют[^)]*|URL non disponibile)\s*\)", "", t, flags=re.I)
     t = re.sub(r"\(\s*\)", "", t)
     t = re.sub(r"\s+([,.;:!?])", r"\1", t)
