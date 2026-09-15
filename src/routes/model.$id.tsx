@@ -159,7 +159,7 @@ function ModelPage() {
         <Section title={t("advice")}>
           <div className="space-y-3">
             {advice.map((a, i) => {
-              const Icon = adviceIcons[i % adviceIcons.length];
+              const Icon = adviceIcons[i % adviceIcons.length]!;
               return (
                 <div key={i} className="rounded-sm border border-border bg-card p-4 shadow-sm">
                   <div className="flex items-center gap-2">
