@@ -24,6 +24,11 @@ def codes_key(codes) -> str:
 
 
 # ---------------------------------------------------------------- image index
+def base(n: str) -> str:
+    """'manos f' -> 'manos' (url.xlsx appends a one-letter line suffix)."""
+    return re.sub(r"\s+[a-z]$", "", n).strip()
+
+
 url_df = pd.read_excel(URL_XLSX)
 by_full = {}
 by_name = defaultdict(list)
@@ -35,29 +40,33 @@ for _, row in url_df.iterrows():
     if not m:
         continue
     name, codes = norm(m.group(1)), re.findall(r"\d+", m.group(2))
-    if url:
-        by_full.setdefault(f"{name}|{codes_key(codes)}", url)
+    if not url:
+        continue
+    for n in {name, base(name)}:
+        by_full.setdefault(f"{n}|{codes_key(codes)}", url)
         for c in codes:
-            by_full.setdefault(f"{name}|{c}", url)
-        by_name[name].append(url)
+            by_full.setdefault(f"{n}|{c}", url)
+        by_name[n].append(url)
 
 unmatched = defaultdict(int)
 
 
 def lookup(name: str, codes) -> str | None:
     n = norm(name)
-    if codes:
-        hit = by_full.get(f"{n}|{codes_key(codes)}")
-        if hit:
-            return hit
-        for c in codes:
-            hit = by_full.get(f"{n}|{c}")
+    for key in (n, base(n)):
+        if codes:
+            hit = by_full.get(f"{key}|{codes_key(codes)}")
             if hit:
                 return hit
-    if by_name.get(n):
-        return by_name[n][0]
+            for c in codes:
+                hit = by_full.get(f"{key}|{c}")
+                if hit:
+                    return hit
+        if by_name.get(key):
+            return by_name[key][0]
     unmatched[f"{name} ({' '.join(codes)})"] += 1
     return None
+
 
 
 # ---------------------------------------------------------------- text tidying
