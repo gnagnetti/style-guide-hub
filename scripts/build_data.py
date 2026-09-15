@@ -204,8 +204,18 @@ for m in models:
                 recovered += 1
 print(f"recovered_from_variants={recovered}")
 
-with open(OUT, "w", encoding="utf-8") as f:
-    json.dump(models, f, ensure_ascii=False)
+import os
+import shutil
+
+outdir = "src/data/models"
+shutil.rmtree(outdir, ignore_errors=True)
+os.makedirs(outdir, exist_ok=True)
+for m in models:
+    with open(f"{outdir}/{m['id']}.json", "w", encoding="utf-8") as f:
+        json.dump(m, f, ensure_ascii=False)
+with open("src/data/index.json", "w", encoding="utf-8") as f:
+    json.dump([{"id": m["id"], "name": m["name"]} for m in models], f, ensure_ascii=False)
+
 
 
 cited = sum(len(l["items"]) for m in models for l in m["looks"])
