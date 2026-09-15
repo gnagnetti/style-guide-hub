@@ -19,6 +19,12 @@ def norm(s: str) -> str:
     return re.sub(r"\s+", " ", str(s)).strip().lower()
 
 
+def enc(url: str | None) -> str | None:
+    """Percent-encode spaces etc. so every image URL is loadable as-is."""
+    return None if not url else quote(url, safe=":/%?&=#+,~@!$'*;")
+
+
+
 def codes_key(codes) -> str:
     return " ".join(codes)
 
