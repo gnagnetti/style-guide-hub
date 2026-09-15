@@ -156,7 +156,8 @@ def split_look_segments(raw):
             body = part[start:end].strip(" -,")
             prefix = " ".join(x for x in (intro if index == 0 else "", variant_text if index > 0 else "") if x)
             segment = f"{prefix} {body}".strip()
-            if segment:
+            content_without_context = VARIANT_RE.sub("", segment).strip(" -,")
+            if segment and not COMBINATION_RE.fullmatch(content_without_context):
                 out.append(segment)
 
     return out
