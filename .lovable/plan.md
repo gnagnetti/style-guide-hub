@@ -8,7 +8,8 @@ Ogni combinazione distinta del testo sorgente diventerà una scheda autonoma. So
    - ogni voce `В lookbook (Look …)`;
    - ogni voce `На витрине (Vetrina …)`;
    - gli equivalenti già presenti negli altri testi;
-   - i separatori `|` già supportati.
+   - i separatori `|` già supportati;
+   - i separatori ` - ` quando introducono una nuova combinazione, senza dividere i trattini usati normalmente dentro una descrizione.
 2. Conservare il testo introduttivo e il relativo `Вариант …` nella prima scheda pertinente; propagare il contesto della variante alle combinazioni successive quando serve a non perdere il colore di riferimento.
 3. Estrarre articoli, codici e immagini separatamente da ogni nuova scheda, così nessuna scheda eredita immagini citate nelle altre.
 4. Rigenerare tutti i 273 modelli usando i file Excel sorgente e mantenere i collegamenti alle schede dei modelli riconosciuti.
