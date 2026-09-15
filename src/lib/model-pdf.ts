@@ -38,7 +38,12 @@ function arrayBufferToBase64(buffer: ArrayBuffer) {
 async function loadImage(url: string | null) {
   if (!url) return null;
   try {
-    const response = await fetch(url);
+    const source = new URL(url);
+    const requestUrl =
+      source.hostname === "cdn.jooraccess.com"
+        ? `/api/public/image?url=${encodeURIComponent(url)}`
+        : url;
+    const response = await fetch(requestUrl);
     if (!response.ok) return null;
     const blob = await response.blob();
     const dataUrl = await new Promise<string>((resolve, reject) => {
