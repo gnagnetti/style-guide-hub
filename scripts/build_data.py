@@ -133,6 +133,17 @@ def split_look_segments(raw):
             out.append(part)
             continue
 
+        # Container labels such as "На витринах (Vetrina):" introduce a list
+        # but are not combinations themselves when followed by a concrete item.
+        combinations = [
+            start
+            for index, start in enumerate(combinations)
+            if not (
+                index + 1 < len(combinations)
+                and not part[start:combinations[index + 1]].strip(" -,.:;")
+            )
+        ]
+
         variants = list(VARIANT_RE.finditer(part))
         intro = part[: combinations[0]].strip(" -,")
         for index, start in enumerate(combinations):
