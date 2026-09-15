@@ -181,8 +181,32 @@ for _, r in df.iterrows():
     )
 
 models.sort(key=lambda m: m["name"].lower())
+
+# Second pass: for cited garments absent from the image list, borrow the picture
+# from that model's own colour variants (exact colour code first).
+by_id = {m["id"]: m for m in models}
+recovered = 0
+for m in models:
+    for lk in m["looks"]:
+        for it in lk["items"]:
+            if it["imageUrl"]:
+                continue
+            target = by_id.get(it.get("modelId")) or (m if norm(it["name"]) == norm(m["name"]) else None)
+            if not target:
+                continue
+            wanted = set(it["code"].split())
+            pick = next(
+                (c["imageUrl"] for c in target["colors"] if c["imageUrl"] and wanted & set(c["code"].split())),
+                None,
+            ) or next((c["imageUrl"] for c in target["colors"] if c["imageUrl"]), None)
+            if pick:
+                it["imageUrl"] = pick
+                recovered += 1
+print(f"recovered_from_variants={recovered}")
+
 with open(OUT, "w", encoding="utf-8") as f:
     json.dump(models, f, ensure_ascii=False)
+
 
 cited = sum(len(l["items"]) for m in models for l in m["looks"])
 missing = sum(1 for m in models for l in m["looks"] for i in l["items"] if not i["imageUrl"])
