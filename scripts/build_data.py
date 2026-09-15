@@ -100,11 +100,74 @@ ITEM_RE = re.compile(
 SKIP_NAMES = {"vetrina", "look", "total look", "total", "outfit"}
 
 
+VARIANT_RE = re.compile(r"\bВариант\s+[\d\s]+\s*:", re.I)
+COMBINATION_RE = re.compile(
+    r"(?:В\s+lookbook(?:\s*\([^)]*\))?|На\s+витрин(?:е|ах)(?:\s*\([^)]*\))?"
+    r"|Lookbook(?:\s*\([^)]*\))?|Vetrina(?:\s*\([^)]*\))?"
+    r"|Визуальный\s+мерчандайзинг(?:\s*\([^)]*\))?)\s*:",
+    re.I,
+)
+DASH_COMBINATION_RE = re.compile(
+    r"\s+-\s+(?=[^:]{0,100}(?:Look(?:book)?|Vetrina|В\s+lookbook|На\s+витрин|Витрин)[^:]{0,60}:)",
+    re.I,
+)
+
+
+def split_look_segments(raw):
+    """Split prose into one block per explicitly cited look/window display."""
+    cleaned = clean(raw)
+    parts = [p.strip() for p in re.split(r"\s*\|\s*", cleaned) if p.strip()]
+    out = []
+
+    for part in parts:
+        dash_starts = [m.end() for m in DASH_COMBINATION_RE.finditer(part)]
+        explicit_starts = [
+            m.start()
+            for m in COMBINATION_RE.finditer(part)
+            if not any(0 <= m.start() - dash_start <= 120 for dash_start in dash_starts)
+        ]
+        # Prefer the dash boundary when it introduces a descriptive title whose
+        # parenthetical Look/Vetrina label appears later in the same heading.
+        combinations = sorted(set(explicit_starts + dash_starts))
+        if len(combinations) < 2:
+            out.append(part)
+            continue
+
+        # Container labels such as "На витринах (Vetrina):" introduce a list
+        # but are not combinations themselves when followed by a concrete item.
+        combinations = [
+            start
+            for index, start in enumerate(combinations)
+            if not (
+                index + 1 < len(combinations)
+                and not part[start:combinations[index + 1]].strip(" -,.:;")
+            )
+        ]
+
+        variants = list(VARIANT_RE.finditer(part))
+        intro = part[: combinations[0]].strip(" -,")
+        for index, start in enumerate(combinations):
+            next_start = combinations[index + 1] if index + 1 < len(combinations) else len(part)
+            next_variant = next((v for v in variants if start <= v.start() < next_start), None)
+            end = next_variant.start() if next_variant else next_start
+
+            active_variant = next((v for v in reversed(variants) if v.start() < start), None)
+            variant_text = active_variant.group(0).strip() if active_variant else ""
+            body = part[start:end].strip(" -,")
+            prefix = " ".join(x for x in (intro if index == 0 else "", variant_text if index > 0 else "") if x)
+            segment = f"{prefix} {body}".strip()
+            content_without_context = VARIANT_RE.sub("", segment).strip(" -,")
+            if segment and not COMBINATION_RE.fullmatch(content_without_context):
+                out.append(segment)
+
+    return out
+
+
 def parse_looks(raw, self_name):
     if not isinstance(raw, str) or not raw.strip():
         return []
     looks = []
-    for seg in raw.split(" | "):
+    for seg in split_look_segments(raw):
         seg = seg.strip()
         if not seg:
             continue
