@@ -8,6 +8,7 @@ import json
 import re
 import sys
 from collections import defaultdict
+from urllib.parse import quote
 
 import pandas as pd
 
@@ -19,45 +20,60 @@ def norm(s: str) -> str:
     return re.sub(r"\s+", " ", str(s)).strip().lower()
 
 
+def enc(url: str | None) -> str | None:
+    """Percent-encode spaces etc. so every image URL is loadable as-is."""
+    return None if not url else quote(url, safe=":/%?&=#+,~@!$'*;")
+
+
+
 def codes_key(codes) -> str:
     return " ".join(codes)
 
 
 # ---------------------------------------------------------------- image index
+def base(n: str) -> str:
+    """'manos f' -> 'manos' (url.xlsx appends a one-letter line suffix)."""
+    return re.sub(r"\s+[a-z]$", "", n).strip()
+
+
 url_df = pd.read_excel(URL_XLSX)
 by_full = {}
 by_name = defaultdict(list)
 for _, row in url_df.iterrows():
     raw = str(row["ModelloColore"])
     url = row["Style Image URL_1"]
-    url = None if (pd.isna(url) or not str(url).startswith("http")) else str(url).strip()
+    url = None if (pd.isna(url) or not str(url).startswith("http")) else enc(str(url).strip())
     m = re.match(r"^(.*?)\s*\(([\d\s]+)\)\s*$", raw)
     if not m:
         continue
     name, codes = norm(m.group(1)), re.findall(r"\d+", m.group(2))
-    if url:
-        by_full.setdefault(f"{name}|{codes_key(codes)}", url)
+    if not url:
+        continue
+    for n in {name, base(name)}:
+        by_full.setdefault(f"{n}|{codes_key(codes)}", url)
         for c in codes:
-            by_full.setdefault(f"{name}|{c}", url)
-        by_name[name].append(url)
+            by_full.setdefault(f"{n}|{c}", url)
+        by_name[n].append(url)
 
 unmatched = defaultdict(int)
 
 
 def lookup(name: str, codes) -> str | None:
     n = norm(name)
-    if codes:
-        hit = by_full.get(f"{n}|{codes_key(codes)}")
-        if hit:
-            return hit
-        for c in codes:
-            hit = by_full.get(f"{n}|{c}")
+    for key in (n, base(n)):
+        if codes:
+            hit = by_full.get(f"{key}|{codes_key(codes)}")
             if hit:
                 return hit
-    if by_name.get(n):
-        return by_name[n][0]
+            for c in codes:
+                hit = by_full.get(f"{key}|{c}")
+                if hit:
+                    return hit
+        if by_name.get(key):
+            return by_name[key][0]
     unmatched[f"{name} ({' '.join(codes)})"] += 1
     return None
+
 
 
 # ---------------------------------------------------------------- text tidying
@@ -81,6 +97,9 @@ ITEM_RE = re.compile(
 )
 
 
+SKIP_NAMES = {"vetrina", "look", "total look", "total", "outfit"}
+
+
 def parse_looks(raw, self_name):
     if not isinstance(raw, str) or not raw.strip():
         return []
@@ -97,6 +116,8 @@ def parse_looks(raw, self_name):
         body_clean = clean(body)
         for m in ITEM_RE.finditer(body_clean):
             name = re.sub(r"\s+", " ", m.group(1)).strip()
+            if norm(name) in SKIP_NAMES:
+                continue
             codes = re.findall(r"\d+", m.group(2))
             key = f"{norm(name)}|{codes_key(codes)}"
             if key in seen:
@@ -117,8 +138,7 @@ def parse_colors(raw, model_name):
         if not m:
             continue
         name, codes, url = m.group(1).strip(), re.findall(r"\d+", m.group(2)), m.group(3).strip()
-        if not url.startswith("http"):
-            url = None
+        url = enc(url) if url.startswith("http") else None
         resolved = lookup(model_name, codes) or url
         out.append({"name": name, "code": " ".join(codes), "imageUrl": resolved})
     return out
