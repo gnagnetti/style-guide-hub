@@ -107,6 +107,10 @@ COMBINATION_RE = re.compile(
     r"|Визуальный\s+мерчандайзинг(?:\s*\([^)]*\))?)\s*:",
     re.I,
 )
+DASH_COMBINATION_RE = re.compile(
+    r"\s+-\s+(?=[^:]{0,100}(?:Look(?:book)?|Vetrina|В\s+lookbook|На\s+витрин|Витрин)[^:]{0,60}:)",
+    re.I,
+)
 
 
 def split_look_segments(raw):
@@ -116,22 +120,30 @@ def split_look_segments(raw):
     out = []
 
     for part in parts:
-        combinations = list(COMBINATION_RE.finditer(part))
+        explicit_starts = [m.start() for m in COMBINATION_RE.finditer(part)]
+        dash_starts = [m.end() for m in DASH_COMBINATION_RE.finditer(part)]
+        starts = sorted(set(explicit_starts + dash_starts))
+        # A dash immediately before an explicit heading describes the same boundary.
+        combinations = []
+        for start in starts:
+            if combinations and start - combinations[-1] < 4:
+                continue
+            combinations.append(start)
         if len(combinations) < 2:
             out.append(part)
             continue
 
         variants = list(VARIANT_RE.finditer(part))
-        intro = part[: combinations[0].start()].strip(" -,")
-        for index, marker in enumerate(combinations):
-            next_start = combinations[index + 1].start() if index + 1 < len(combinations) else len(part)
-            next_variant = next((v for v in variants if marker.end() <= v.start() < next_start), None)
+        intro = part[: combinations[0]].strip(" -,")
+        for index, start in enumerate(combinations):
+            next_start = combinations[index + 1] if index + 1 < len(combinations) else len(part)
+            next_variant = next((v for v in variants if start <= v.start() < next_start), None)
             end = next_variant.start() if next_variant else next_start
 
-            active_variant = next((v for v in reversed(variants) if v.start() < marker.start()), None)
+            active_variant = next((v for v in reversed(variants) if v.start() < start), None)
             variant_text = active_variant.group(0).strip() if active_variant else ""
-            body = part[marker.start():end].strip(" -,")
-            prefix = " ".join(x for x in (intro if index == 0 else "", variant_text) if x)
+            body = part[start:end].strip(" -,")
+            prefix = " ".join(x for x in (intro if index == 0 else "", variant_text if index > 0 else "") if x)
             segment = f"{prefix} {body}".strip()
             if segment:
                 out.append(segment)
