@@ -1,1 +1,194 @@
-{"id": 447, "name": "Moles", "description": {"en": "The Moles jacket is a true masterpiece of 'soft tailoring', in which the discipline of a classic blazer meets the unparalleled softness of Italian knitwear. The cropped piece is crafted from noble pure virgin wool (pura lana vergine) using an intricate punto stoffa weave technique, lending the piece the density and stability of suiting fabric. The design is masterfully completed with exquisite pleated details, lending the piece a couture character and architectural depth. Classic lapels and functional flap pockets underscore the piece's status, while the signature enamel buttons bearing the LS logo serve as the jewel-like finishing touch to the look. Thanks to the Regular fit and open cuff slits, the jacket delivers absolute freedom of movement while remaining a symbol of intellectual luxury.", "ru": "Жакет Moles --- это истинный шедевр «мягкого тейлоринга», в котором строгость классического блейзера встречается с непревзойденной нежностью итальянского трикотажа. Укороченная модель (cropped) выполнена из благородной чистой девственной шерсти (pura lana vergine) в технике сложного переплетения punto stoffa, обеспечивающего изделию плотность и стабильность костюмной ткани. Дизайн виртуозно дополнен изысканными деталями плиссе, которые придают модели кутюрный характер и архитектурную глубину. Классические лацканы и функциональные карманы с клапанами подчеркивают статусность изделия, а фирменные эмалированные пуговицы с логотипом LS служат ювелирным завершением образа. Благодаря регулярной посадке (vestibilità regular) и открытым разрезам на манжетах, жакет дарит абсолютную свободу движений, оставаясь символом интеллектуальной роскоши."}, "colors": [{"name": "Panna", "code": "0202", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1702573811692424d34b7382_33574360_02781340XX1.jpg"}, {"name": "Senape", "code": "1936", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1844512759692424d2892078_32836015_02781320XX1.jpg"}, {"name": "Melanzana", "code": "0759", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/2011465512692424d2e88a74_22193304_02781330XX1.jpg"}], "looks": [{"title": null, "text": "Стилисты бренда Luisa Spagnoli предлагают использовать жакет Moles как для создания женственных сетов с юбками, так и для динамичных городских образов: Вариант 0759 ( Сливовый): В lookbook (Look 84) и на витринах (Vetrina 73, Bambola 1): канонический трикотажный тотал-лук с туникой Mascate 0759 и юбкой миди Morolo 0759, дополненный шелковым платком Rocchero 4693.", "items": [{"name": "Mascate", "code": "0759", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1136552101691c5791c992f1_52218978_02790090XX1.jpg", "modelId": 436}, {"name": "Morolo", "code": "0759", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/MOROLO_75900000000.jpg", "modelId": 450}, {"name": "Rocchero", "code": "4693", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/UeTI07JEQnuybrvsR-bv5g_2080263624691c57e8aaf160_18464595_02800370XX7.jpg"}]}, {"title": "На витринах (Vetrina 75, Bambola 2)", "text": "современное прочтение с поло Mlacaria 0970 и юбкой Morolo 0759.", "items": [{"name": "Mlacaria", "code": "0970", "imageUrl": null}, {"name": "Morolo", "code": "0759", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/MOROLO_75900000000.jpg", "modelId": 450}]}, {"title": "На витринах (Vetrina 74, Bambola 3)", "text": "многослойный образ под объемным коротким пальто Soppalco 0733 в паре с рубашкой Limonaia 0202 ( и вельветовыми брюками Olap 2259. Вариант 1936 ( Серый):", "items": [{"name": "Soppalco", "code": "0733", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1763425955691c57c36a48f3_35962156_02780270XX1.jpg", "modelId": 329}, {"name": "Limonaia", "code": "0202", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/LIMONAIA_117100000000.jpg", "modelId": 416}, {"name": "Olap", "code": "2259", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/894988827691f15a03fcb79_08463233_02780960XX1.jpg", "modelId": 243}]}, {"title": "В lookbook (Look 80) и на витринах (Vetrina 112, Bambola 2)", "text": "интеллектуальный деловой образ с белой рубашкой Loriana 0201 и строгими брюками Orville 0101. - Акцентный сет: стилисты также рекомендуют сочетание с широкими джинсами Opaglio 0927, как представлено в Look 80. Вариант 0202 ( Белый):", "items": [{"name": "Loriana", "code": "0201", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/153074450692424d097e944_13615490_02781260XX1.jpg", "modelId": 425}, {"name": "Orville", "code": "0101", "imageUrl": null}, {"name": "Opaglio", "code": "0927", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/2134929375692424d668cd78_06695675_02781440XX1.jpg", "modelId": 461}]}, {"title": "На витринах (Vetrina 7, Bambola 3)", "text": "свежий летний образ с рубашкой Limonaia 0202 ( и брюками Assessore 0221.", "items": [{"name": "Limonaia", "code": "0202", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/LIMONAIA_117100000000.jpg", "modelId": 416}, {"name": "Assessore", "code": "0221", "imageUrl": null}]}, {"title": "Зимняя интерпретация (Vetrina 103, Bambola 3)", "text": "под ярким пальто Scatto 0202 в комплекте с пуловером Mano 0202 и брюками Osten 0209.", "items": [{"name": "Scatto", "code": "0202", "imageUrl": null}, {"name": "Mano", "code": "0202", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/image%20%281019%29.png"}, {"name": "Osten", "code": "0209", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/OSTENA_20200000000%20%284%29.jpg"}]}], "advice": {"en": ["- A textile 'Hybrid': Direct the client's attention to the punto stoffa knit. Explain that the Moles jacket has the structural stability of a classic blazer, while remaining as comfortable as a favorite cardigan. This is the ideal piece for those who value status without sacrificing comfort. - The aesthetic of pleating: Highlight the pleated details on the jacket. This is a distinctive Spagnoli design device that sets the model apart from ordinary knitwear, elevating it into the realm of runway fashion and underscoring the brand's attention to detail. - Mastery of silhouette: Recommend the model for creating on-trend proportions. The jacket's cropped length, combined with high-waisted trousers or skirts (for example, Morolo 0759), visually elongates the legs and structures the figure, creating a modern, slender silhouette."], "ru": ["- Текстильный «Гибрид»: Акцентируйте внимание клиента на вязке punto stoffa. Объясните, что жакет Moles обладает формоустойчивостью классического блейзера, но при этом комфортен как любимый кардиган. Это идеальная вещь для тех, кто ценит статус без ущерба удобству. - Эстетика плиссе: Подчеркните наличие деталей плиссе на жакете. Это уникальный дизайнерский прием Spagnoli, который выделяет модель среди обычного трикотажа, превращая её в объект подиумной моды и подчеркивая внимание бренда к деталям. - Мастерство силуэта: Рекомендуйте модель для создания актуальных пропорций. Укороченная длина жакета в сочетании с высокой посадкой брюк или юбок (например, Morolo 0759) визуально удлиняет ноги и структурирует фигуру, создавая современный и стройный силуэт."]}, "objections": {"en": [{"q": "", "a": "Objection Overcoming Strategy «The cropped On the contrary, the jacket is designed to end length might add exactly at the waistline. Paired with the high- bulk» waisted Orville 0101 trousers, it visually \"breaks\" the silhouette at its narrowest point, emphasizing the waist. «I'm worried the Explain that in Spagnoli pieces, the pleating is pleated details set using a special wool-fiber fixation will come apart technique. Following the care recommendations, with wear» the pleats will retain their architectural shape for years. «The knit jacket Point out the density of the punto stoffa knit will stretch out (Milano jersey). This is one of the most stable at the elbows» weaves, preventing distortion and preserving the crispness of the jacket's lines even with active use. «The enamel Emphasize that LS's signature hardware is a marker buttons are too of belonging to the \"Quiet Luxury\" world. The noticeable» buttons are crafted in the style of fine jewelry and allow the client to minimize the use of other accessories. «The wool might Remind the client that pura lana vergine is a be too warm for natural thermoregulator. It wicks away excess the office» heat and lets the skin breathe, ensuring a comfortable microclimate both indoors in cooler settings and outdoors"}], "ru": [{"q": "", "a": "Возражение Стратегия преодоления «Укороченная длина Напротив, жакет спроектирован так, чтобы (cropped) может заканчиваться на линии талии. В сочетании с полнить» высокой посадкой брюк Orville 0101 он визуально «разбивает» силуэт в самом узком месте, подчеркивая стройность. «Боюсь, что детали Поясните, что в моделях Spagnoli плиссировка плиссе разойдутся выполняется по специальной технологии фиксации при носке» волокон шерсти. При соблюдении рекомендаций по уходу детали сохранят свою архитектурную форму годами. «Трикотажный жакет Укажите на плотность вязки punto stoffa быстро вытянется в (миланское джерси). Это одно из самых стабильных локтях» переплетений, которое предотвращает деформацию и сохраняет четкость линий жакета даже при активной эксплуатации. «Эмалированные Подчеркните, что фирменная фурнитура LS --- это пуговицы слишком маркер принадлежности к миру «Quiet Luxury». заметны» Пуговицы выполнены в стиле ювелирных украшений и позволяют минимизировать использование других аксессуаров. «Шерсть может быть Напомните, что pura lana vergine --- это слишком теплой для натуральный терморегулятор. Она отводит лишнее офиса» тепло и позволяет коже дышать, обеспечивая комфортный микроклимат как в прохладном помещении, так и на улице"}]}}
+{
+  "id": 447,
+  "name": "Moles",
+  "description": {
+    "en": "The Moles jacket is a true masterpiece of 'soft tailoring', in which the discipline of a classic blazer meets the unparalleled softness of Italian knitwear. The cropped piece is crafted from noble pure virgin wool (pura lana vergine) using an intricate punto stoffa weave technique, lending the piece the density and stability of suiting fabric. The design is masterfully completed with exquisite pleated details, lending the piece a couture character and architectural depth. Classic lapels and functional flap pockets underscore the piece's status, while the signature enamel buttons bearing the LS logo serve as the jewel-like finishing touch to the look. Thanks to the Regular fit and open cuff slits, the jacket delivers absolute freedom of movement while remaining a symbol of intellectual luxury.",
+    "ru": "Жакет Moles --- это истинный шедевр «мягкого тейлоринга», в котором строгость классического блейзера встречается с непревзойденной нежностью итальянского трикотажа. Укороченная модель (cropped) выполнена из благородной чистой девственной шерсти (pura lana vergine) в технике сложного переплетения punto stoffa, обеспечивающего изделию плотность и стабильность костюмной ткани. Дизайн виртуозно дополнен изысканными деталями плиссе, которые придают модели кутюрный характер и архитектурную глубину. Классические лацканы и функциональные карманы с клапанами подчеркивают статусность изделия, а фирменные эмалированные пуговицы с логотипом LS служат ювелирным завершением образа. Благодаря регулярной посадке (vestibilità regular) и открытым разрезам на манжетах, жакет дарит абсолютную свободу движений, оставаясь символом интеллектуальной роскоши."
+  },
+  "colors": [
+    {
+      "name": "Panna",
+      "code": "0202",
+      "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1702573811692424d34b7382_33574360_02781340XX1.jpg"
+    },
+    {
+      "name": "Senape",
+      "code": "1936",
+      "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1844512759692424d2892078_32836015_02781320XX1.jpg"
+    },
+    {
+      "name": "Melanzana",
+      "code": "0759",
+      "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/2011465512692424d2e88a74_22193304_02781330XX1.jpg"
+    }
+  ],
+  "looks": [
+    {
+      "title": null,
+      "text": "Стилисты бренда Luisa Spagnoli предлагают использовать жакет Moles как для создания женственных сетов с юбками, так и для динамичных городских образов: Вариант 0759 ( Сливовый): В lookbook (Look 84) и на витринах (Vetrina 73, Bambola 1): канонический трикотажный тотал-лук с туникой Mascate 0759 и юбкой миди Morolo 0759, дополненный шелковым платком Rocchero 4693.",
+      "items": [
+        {
+          "name": "Mascate",
+          "code": "0759",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1136552101691c5791c992f1_52218978_02790090XX1.jpg",
+          "modelId": 436
+        },
+        {
+          "name": "Morolo",
+          "code": "0759",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/MOROLO_75900000000.jpg",
+          "modelId": 450
+        },
+        {
+          "name": "Rocchero",
+          "code": "4693",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/UeTI07JEQnuybrvsR-bv5g_2080263624691c57e8aaf160_18464595_02800370XX7.jpg"
+        }
+      ]
+    },
+    {
+      "title": "На витринах (Vetrina 75, Bambola 2)",
+      "text": "современное прочтение с поло Mlacaria 0970 и юбкой Morolo 0759.",
+      "items": [
+        {
+          "name": "Mlacaria",
+          "code": "0970",
+          "imageUrl": null
+        },
+        {
+          "name": "Morolo",
+          "code": "0759",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/MOROLO_75900000000.jpg",
+          "modelId": 450
+        }
+      ]
+    },
+    {
+      "title": "На витринах (Vetrina 74, Bambola 3)",
+      "text": "многослойный образ под объемным коротким пальто Soppalco 0733 в паре с рубашкой Limonaia 0202 ( и вельветовыми брюками Olap 2259. Вариант 1936 ( Серый):",
+      "items": [
+        {
+          "name": "Soppalco",
+          "code": "0733",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1763425955691c57c36a48f3_35962156_02780270XX1.jpg",
+          "modelId": 329
+        },
+        {
+          "name": "Limonaia",
+          "code": "0202",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/LIMONAIA_117100000000.jpg",
+          "modelId": 416
+        },
+        {
+          "name": "Olap",
+          "code": "2259",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/894988827691f15a03fcb79_08463233_02780960XX1.jpg",
+          "modelId": 243
+        }
+      ]
+    },
+    {
+      "title": "В lookbook (Look 80) и на витринах (Vetrina 112, Bambola 2)",
+      "text": "интеллектуальный деловой образ с белой рубашкой Loriana 0201 и строгими брюками Orville 0101. - Акцентный сет: стилисты также рекомендуют сочетание с широкими джинсами Opaglio 0927, как представлено в Look 80. Вариант 0202 ( Белый):",
+      "items": [
+        {
+          "name": "Loriana",
+          "code": "0201",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/153074450692424d097e944_13615490_02781260XX1.jpg",
+          "modelId": 425
+        },
+        {
+          "name": "Orville",
+          "code": "0101",
+          "imageUrl": null
+        },
+        {
+          "name": "Opaglio",
+          "code": "0927",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/2134929375692424d668cd78_06695675_02781440XX1.jpg",
+          "modelId": 461
+        }
+      ]
+    },
+    {
+      "title": "На витринах (Vetrina 7, Bambola 3)",
+      "text": "свежий летний образ с рубашкой Limonaia 0202 ( и брюками Assessore 0221.",
+      "items": [
+        {
+          "name": "Limonaia",
+          "code": "0202",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/LIMONAIA_117100000000.jpg",
+          "modelId": 416
+        },
+        {
+          "name": "Assessore",
+          "code": "0221",
+          "imageUrl": null
+        }
+      ]
+    },
+    {
+      "title": "Зимняя интерпретация (Vetrina 103, Bambola 3)",
+      "text": "под ярким пальто Scatto 0202 в комплекте с пуловером Mano 0202 и брюками Osten 0209.",
+      "items": [
+        {
+          "name": "Scatto",
+          "code": "0202",
+          "imageUrl": null
+        },
+        {
+          "name": "Mano",
+          "code": "0202",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/image%20%281019%29.png"
+        },
+        {
+          "name": "Osten",
+          "code": "0209",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/OSTENA_20200000000%20%284%29.jpg"
+        }
+      ]
+    }
+  ],
+  "advice": {
+    "en": [
+      "- A textile 'Hybrid': Direct the client's attention to the punto stoffa knit. Explain that the Moles jacket has the structural stability of a classic blazer, while remaining as comfortable as a favorite cardigan. This is the ideal piece for those who value status without sacrificing comfort. - The aesthetic of pleating: Highlight the pleated details on the jacket. This is a distinctive Spagnoli design device that sets the model apart from ordinary knitwear, elevating it into the realm of runway fashion and underscoring the brand's attention to detail. - Mastery of silhouette: Recommend the model for creating on-trend proportions. The jacket's cropped length, combined with high-waisted trousers or skirts (for example, Morolo 0759), visually elongates the legs and structures the figure, creating a modern, slender silhouette."
+    ],
+    "ru": [
+      "- Текстильный «Гибрид»: Акцентируйте внимание клиента на вязке punto stoffa. Объясните, что жакет Moles обладает формоустойчивостью классического блейзера, но при этом комфортен как любимый кардиган. Это идеальная вещь для тех, кто ценит статус без ущерба удобству. - Эстетика плиссе: Подчеркните наличие деталей плиссе на жакете. Это уникальный дизайнерский прием Spagnoli, который выделяет модель среди обычного трикотажа, превращая её в объект подиумной моды и подчеркивая внимание бренда к деталям. - Мастерство силуэта: Рекомендуйте модель для создания актуальных пропорций. Укороченная длина жакета в сочетании с высокой посадкой брюк или юбок (например, Morolo 0759) визуально удлиняет ноги и структурирует фигуру, создавая современный и стройный силуэт."
+    ]
+  },
+  "objections": {
+    "en": [
+      {
+        "q": "",
+        "a": "Objection Overcoming Strategy «The cropped On the contrary, the jacket is designed to end length might add exactly at the waistline. Paired with the high- bulk» waisted Orville 0101 trousers, it visually \"breaks\" the silhouette at its narrowest point, emphasizing the waist. «I'm worried the Explain that in Spagnoli pieces, the pleating is pleated details set using a special wool-fiber fixation will come apart technique. Following the care recommendations, with wear» the pleats will retain their architectural shape for years. «The knit jacket Point out the density of the punto stoffa knit will stretch out (Milano jersey). This is one of the most stable at the elbows» weaves, preventing distortion and preserving the crispness of the jacket's lines even with active use. «The enamel Emphasize that LS's signature hardware is a marker buttons are too of belonging to the \"Quiet Luxury\" world. The noticeable» buttons are crafted in the style of fine jewelry and allow the client to minimize the use of other accessories. «The wool might Remind the client that pura lana vergine is a be too warm for natural thermoregulator. It wicks away excess the office» heat and lets the skin breathe, ensuring a comfortable microclimate both indoors in cooler settings and outdoors"
+      }
+    ],
+    "ru": [
+      {
+        "q": "Укороченная длина",
+        "a": "Напротив, жакет спроектирован так, чтобы может заканчиваться на линии талии. В сочетании с полнить высокой посадкой брюк Orville 0101 он визуально."
+      },
+      {
+        "q": "Боюсь, что детали",
+        "a": "что в моделях Spagnoli плиссировка плиссе разойдутся выполняется по специальной технологии фиксации при носке волокон шерсти. При соблюдении рекомендаций по уходу детали сохранят свою архитектурную форму годами."
+      },
+      {
+        "q": "Трикотажный жакет",
+        "a": "на плотность вязки punto stoffa быстро вытянется в. Это одно из самых стабильных локтях переплетений, которое предотвращает деформацию и сохраняет четкость линий жакета даже при активной эксплуатации."
+      },
+      {
+        "q": "Эмалированные",
+        "a": "что фирменная фурнитура LS города это пуговицы слишком маркер принадлежности к миру."
+      },
+      {
+        "q": "Quiet",
+        "a": "Luxury . заметны» Пуговицы выполнены в стиле ювелирных украшений и позволяют минимизировать использование других аксессуаров."
+      },
+      {
+        "q": "Шерсть может быть",
+        "a": "что pura lana vergine города это слишком теплой для натуральный терморегулятор. Она отводит лишнее офиса тепло и позволяет коже дышать, обеспечивая комфортный микроклимат как в прохладном помещении, так и на улице."
+      }
+    ]
+  }
+}

@@ -1,1 +1,187 @@
-{"id": 442, "name": "Merende", "description": {"en": "The Merende jacket-cardigan is a refined embodiment of 'Heritage' style and country chic, reimagined within the context of Luisa Spagnoli's contemporary urban elegance. The piece, styled as a 'blouson', is crafted from an exquisite wool blend where the mastery of knitwear takes center stage: masterful diagonal knitting (lavorazione diagonale) meets a classic herringbone motif (motivo a spina) on the front panel of the piece. The piece's architecture is considered down to the smallest detail â€” a stand collar (lupetto) and raglan sleeves (maniche raglan) ensure a soft, natural fit, while high elasticated cuffs structure the volume. The piece's status is underscored by genuine horn buttons (vero corno), transforming this cozy cardigan into a fully-fledged outerwear piece for the transitional seasons. The Regular fit guarantees flawless comfort, making the Merende model indispensable for intellectual layered looks.", "ru": "Жакет-кардиган Merende --- это утонченное воплощение стиля «Heritage» и загородного шика, переосмысленного в контексте современной городской элегантности Luisa Spagnoli. Модель выполнена в силуэте «blouson» из изысканной смесовой шерсти, где мастерство вязки выходит на первый план: виртуозная диагональная отделка (lavorazione diagonale) встречается с классическим узором «елочка» (motivo a spina) на передней панели изделия. Архитектура модели продумана до мелочей --- воротник-стойка (lupetto) и рукава реглан (maniche raglan) обеспечивают мягкую, естественную посадку, а высокие эластичные манжеты структурируют объем. Статусность изделия подчеркивают пуговицы из натурального рога (vero corno), превращая этот уютный кардиган в полноценный элемент верхней одежды для межсезонья. Регулярная посадка (vestibilità regular) гарантирует безупречный комфорт, делая модель Merende незаменимой для интеллектуальных многослойных образов."}, "colors": [{"name": "Tabacco", "code": "2234", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/748832174691f157692a0b6_36843969_02790440XX1.jpg"}, {"name": "Verde Militare", "code": "1736", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1929290977691f15a3cde391_66200932_02790790XX1.jpg"}], "looks": [{"title": null, "text": "Стилисты бренда предлагают использовать универсальность Merende для создания как женственных образов с юбками, так и функциональных сетов с брюками: Вариант 1736: Look 45: каноническое сочетание с вельветовыми брюками Ornago 1759, подчеркивающее фактуру вязки.", "items": [{"name": "Ornago", "code": "1759", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/85911319692424e42cbdc1_93438143_02781800XX1.jpg", "modelId": 465}]}, {"title": null, "text": "Вариант 1736: Vetrina 40 (Bambola 2): сложный многослойный образ под тренч Single 2731 1167 в паре с шелковой рубашкой Lusia 3406 1740 и брюками Orlato 1790.", "items": [{"name": "Single", "code": "2731 1167", "imageUrl": null}, {"name": "Lusia", "code": "3406 1740", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1396325310692424d1b4d2c2_05847867_02781300XX1.jpg", "modelId": 428}, {"name": "Orlato", "code": "1790", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/ORLATO_179000000000.jpg"}]}, {"title": null, "text": "Вариант 1736: Vetrina 44 (Bambola 1): функциональный зимний аутфит под куртку Scrittoio 1729 0992 с классическими брюками в «елочку» Optare 3326.", "items": [{"name": "Scrittoio", "code": "1729 0992", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/22486811691f159c0fa9a1_69307500_02780880XX1.jpg", "modelId": 477}, {"name": "Optare", "code": "3326", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1697710587691f1560afa628_65630327_02780070XX1.jpg", "modelId": 463}]}, {"title": null, "text": "Вариант 2234: Look 55: подиумная стилизация с романтичной белой рубашкой Localita 0201 и юбкой в клетку тартан Francobollo 3372.", "items": [{"name": "Localita", "code": "0201", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1407561629692424cfaef943_59921062_02781240XX1.jpg", "modelId": 422}, {"name": "Francobollo", "code": "3372", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/2132636636691f15621c8939_14393259_02780500XX1.jpg", "modelId": 394}]}, {"title": null, "text": "Вариант 2234: Vetrina 3 (Bambola 1): аристократичный сет под замшевый жакет Scanio 2219 0908 с брюками Opacita 1268.", "items": [{"name": "Scanio", "code": "2219 0908", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1382076925692424da8dd0a9_52339721_02781580XX1.jpg", "modelId": 475}, {"name": "Opacita", "code": "1268", "imageUrl": null}]}, {"title": null, "text": "Вариант 2234: Vetrina 42 (Bambola 2): городской шик в паре с шелковой рубашкой Bacche 0201 и широкими джинсами Opaglio 0927.", "items": [{"name": "Bacche", "code": "0201", "imageUrl": null}, {"name": "Opaglio", "code": "0927", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/2134929375692424d668cd78_06695675_02781440XX1.jpg", "modelId": 461}]}, {"title": null, "text": "Вариант 2234: Vetrina 100 (Bambola 2): статусное сочетание под пальто Scansione 0961 с классической рубашкой Lucinda 0201 и брюками Olinda 3404.", "items": [{"name": "Scansione", "code": "0961", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/WDu1Ie_2TLCfXS6sapBREA_929555794696f42f1be1be1_27317241_02820880XX1.jpg", "modelId": 302}, {"name": "Lucinda", "code": "0201", "imageUrl": null}, {"name": "Olinda", "code": "3404", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/-zYTZ534RoOB5w7RExMFfw_226965868696f42e6eeab90_44429190_02820650XX1.jpg", "modelId": 246}]}], "advice": {"en": ["- The 'Jacket-Blouson' aesthetic: Direct the client's attention to the fact that Merende is a hybrid between a cardigan and a light jacket. Thanks to its dense knit and stand collar, it holds its shape better than ordinary knitwear, allowing it to be worn as standalone outerwear on cooler days. - An interplay of textures: Invite the client to appreciate the combination of diagonal knit and herringbone pattern. This visual device not only lends the piece a more refined quality, but also creates dynamic lines that visually discipline the silhouette. - Status in the details: Draw attention to the natural horn buttons. This is a hallmark of superior quality and of Luisa Spagnoli's commitment to natural, long-lasting materials, significantly enhancing the piece's value in the eyes of a connoisseur of luxury."], "ru": ["- Эстетика «Жакета-Блузона»: Акцентируйте внимание клиента на том, что Merende --- это гибрид кардигана и легкого жакета. Благодаря плотной вязке и воротнику-стойке, он держит форму лучше обычного трикотажа, что позволяет носить его как самостоятельную верхнюю одежду в прохладные дни. - Игра фактур: Предложите клиенту оценить сочетание диагональной вязки и узора «елочка». Этот визуальный прием не только добавляет изделию дороговизны, но и создает динамичные линии, которые визуально дисциплинируют силуэт. - Статус в деталях: Обратите внимание на пуговицы из натурального рога. Это маркер высокого качества и приверженности бренда Luisa Spagnoli к натуральным, долговечным материалам, что значительно повышает ценность вещи в глазах ценителя роскоши."]}, "objections": {"en": [{"q": "", "a": "Objection Overcoming Strategy «The blouson might Point out the high cuffs and the knit structure. add bulk at the The raglan sleeve softens the shoulder line, waist» while the dense herringbone knit across the chest creates a vertical focal point that balances the volume. «A wool blend is Explain that a complex architectural knit with less prestigious diagonal elements requires the addition of than 100%» specialty fibers to maintain shape retention and the piece's longevity. «The stand collar Showcase Look 55: the buttons allow you to seems too vary the depth of the neckline. Left open, the closed» collar transforms into elegant lapels, revealing the dÃ©colletage. «The design looks On the contrary, \"British Heritage\" style is the too rustic» season's leading trend. Paired with the Lusia 3402 silk blouse or Opaglio 0927 jeans, the jacket reads as fashion-forward. «I'm worried the The dense knit and raglan cut minimize strain on knit will stretch out the fabric at the elbows, allowing the jacket to at the elbows» retain its pristine look even with regular wear"}], "ru": [{"q": "", "a": "Возражение Стратегия преодоления «Блузон может Укажите на высокие манжеты и структуру вязки. Рукав полнить в зоне реглан смягчает линию плеча, а плотная вязка талии» «елочкой» на груди создает вертикальный акцент, уравновешивающий объем. «Смесовая шерсть Поясните, что сложная архитектурная вязка с менее престижна, чем диагональными элементами требует добавления 100%» специальных волокон для поддержания формоустойчивости и долговечности изделия. «Воротник-стойка Продемонстрируйте Look 55: пуговицы позволяют кажется слишком варьировать глубину выреза. В расстегнутом виде закрытым» воротник превращается в элегантные лацканы, открывая портретную зону. «Дизайн выглядит Напротив, стиль «British Heritage» --- главный тренд слишком сезона. В сочетании с шелковой блузой Lusia 3402 по-деревенски» или джинсами Opaglio 0927 жакет выглядит остромодно. «Боюсь, что Специфика плотной вязки и крой реглан минимизируют трикотаж растянется натяжение полотна в локтевой зоне, позволяя жакету на локтях» сохранять первозданный вид при активной носке"}]}}
+{
+  "id": 442,
+  "name": "Merende",
+  "description": {
+    "en": "The Merende jacket-cardigan is a refined embodiment of 'Heritage' style and country chic, reimagined within the context of Luisa Spagnoli's contemporary urban elegance. The piece, styled as a 'blouson', is crafted from an exquisite wool blend where the mastery of knitwear takes center stage: masterful diagonal knitting (lavorazione diagonale) meets a classic herringbone motif (motivo a spina) on the front panel of the piece. The piece's architecture is considered down to the smallest detail â€” a stand collar (lupetto) and raglan sleeves (maniche raglan) ensure a soft, natural fit, while high elasticated cuffs structure the volume. The piece's status is underscored by genuine horn buttons (vero corno), transforming this cozy cardigan into a fully-fledged outerwear piece for the transitional seasons. The Regular fit guarantees flawless comfort, making the Merende model indispensable for intellectual layered looks.",
+    "ru": "Жакет-кардиган Merende --- это утонченное воплощение стиля «Heritage» и загородного шика, переосмысленного в контексте современной городской элегантности Luisa Spagnoli. Модель выполнена в силуэте «blouson» из изысканной смесовой шерсти, где мастерство вязки выходит на первый план: виртуозная диагональная отделка (lavorazione diagonale) встречается с классическим узором «елочка» (motivo a spina) на передней панели изделия. Архитектура модели продумана до мелочей --- воротник-стойка (lupetto) и рукава реглан (maniche raglan) обеспечивают мягкую, естественную посадку, а высокие эластичные манжеты структурируют объем. Статусность изделия подчеркивают пуговицы из натурального рога (vero corno), превращая этот уютный кардиган в полноценный элемент верхней одежды для межсезонья. Регулярная посадка (vestibilità regular) гарантирует безупречный комфорт, делая модель Merende незаменимой для интеллектуальных многослойных образов."
+  },
+  "colors": [
+    {
+      "name": "Tabacco",
+      "code": "2234",
+      "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/748832174691f157692a0b6_36843969_02790440XX1.jpg"
+    },
+    {
+      "name": "Verde Militare",
+      "code": "1736",
+      "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1929290977691f15a3cde391_66200932_02790790XX1.jpg"
+    }
+  ],
+  "looks": [
+    {
+      "title": null,
+      "text": "Стилисты бренда предлагают использовать универсальность Merende для создания как женственных образов с юбками, так и функциональных сетов с брюками: Вариант 1736: Look 45: каноническое сочетание с вельветовыми брюками Ornago 1759, подчеркивающее фактуру вязки.",
+      "items": [
+        {
+          "name": "Ornago",
+          "code": "1759",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/85911319692424e42cbdc1_93438143_02781800XX1.jpg",
+          "modelId": 465
+        }
+      ]
+    },
+    {
+      "title": null,
+      "text": "Вариант 1736: Vetrina 40 (Bambola 2): сложный многослойный образ под тренч Single 2731 1167 в паре с шелковой рубашкой Lusia 3406 1740 и брюками Orlato 1790.",
+      "items": [
+        {
+          "name": "Single",
+          "code": "2731 1167",
+          "imageUrl": null
+        },
+        {
+          "name": "Lusia",
+          "code": "3406 1740",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1396325310692424d1b4d2c2_05847867_02781300XX1.jpg",
+          "modelId": 428
+        },
+        {
+          "name": "Orlato",
+          "code": "1790",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/ORLATO_179000000000.jpg"
+        }
+      ]
+    },
+    {
+      "title": null,
+      "text": "Вариант 1736: Vetrina 44 (Bambola 1): функциональный зимний аутфит под куртку Scrittoio 1729 0992 с классическими брюками в «елочку» Optare 3326.",
+      "items": [
+        {
+          "name": "Scrittoio",
+          "code": "1729 0992",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/22486811691f159c0fa9a1_69307500_02780880XX1.jpg",
+          "modelId": 477
+        },
+        {
+          "name": "Optare",
+          "code": "3326",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1697710587691f1560afa628_65630327_02780070XX1.jpg",
+          "modelId": 463
+        }
+      ]
+    },
+    {
+      "title": null,
+      "text": "Вариант 2234: Look 55: подиумная стилизация с романтичной белой рубашкой Localita 0201 и юбкой в клетку тартан Francobollo 3372.",
+      "items": [
+        {
+          "name": "Localita",
+          "code": "0201",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1407561629692424cfaef943_59921062_02781240XX1.jpg",
+          "modelId": 422
+        },
+        {
+          "name": "Francobollo",
+          "code": "3372",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/2132636636691f15621c8939_14393259_02780500XX1.jpg",
+          "modelId": 394
+        }
+      ]
+    },
+    {
+      "title": null,
+      "text": "Вариант 2234: Vetrina 3 (Bambola 1): аристократичный сет под замшевый жакет Scanio 2219 0908 с брюками Opacita 1268.",
+      "items": [
+        {
+          "name": "Scanio",
+          "code": "2219 0908",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1382076925692424da8dd0a9_52339721_02781580XX1.jpg",
+          "modelId": 475
+        },
+        {
+          "name": "Opacita",
+          "code": "1268",
+          "imageUrl": null
+        }
+      ]
+    },
+    {
+      "title": null,
+      "text": "Вариант 2234: Vetrina 42 (Bambola 2): городской шик в паре с шелковой рубашкой Bacche 0201 и широкими джинсами Opaglio 0927.",
+      "items": [
+        {
+          "name": "Bacche",
+          "code": "0201",
+          "imageUrl": null
+        },
+        {
+          "name": "Opaglio",
+          "code": "0927",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/2134929375692424d668cd78_06695675_02781440XX1.jpg",
+          "modelId": 461
+        }
+      ]
+    },
+    {
+      "title": null,
+      "text": "Вариант 2234: Vetrina 100 (Bambola 2): статусное сочетание под пальто Scansione 0961 с классической рубашкой Lucinda 0201 и брюками Olinda 3404.",
+      "items": [
+        {
+          "name": "Scansione",
+          "code": "0961",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/WDu1Ie_2TLCfXS6sapBREA_929555794696f42f1be1be1_27317241_02820880XX1.jpg",
+          "modelId": 302
+        },
+        {
+          "name": "Lucinda",
+          "code": "0201",
+          "imageUrl": null
+        },
+        {
+          "name": "Olinda",
+          "code": "3404",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/-zYTZ534RoOB5w7RExMFfw_226965868696f42e6eeab90_44429190_02820650XX1.jpg",
+          "modelId": 246
+        }
+      ]
+    }
+  ],
+  "advice": {
+    "en": [
+      "- The 'Jacket-Blouson' aesthetic: Direct the client's attention to the fact that Merende is a hybrid between a cardigan and a light jacket. Thanks to its dense knit and stand collar, it holds its shape better than ordinary knitwear, allowing it to be worn as standalone outerwear on cooler days. - An interplay of textures: Invite the client to appreciate the combination of diagonal knit and herringbone pattern. This visual device not only lends the piece a more refined quality, but also creates dynamic lines that visually discipline the silhouette. - Status in the details: Draw attention to the natural horn buttons. This is a hallmark of superior quality and of Luisa Spagnoli's commitment to natural, long-lasting materials, significantly enhancing the piece's value in the eyes of a connoisseur of luxury."
+    ],
+    "ru": [
+      "- Эстетика «Жакета-Блузона»: Акцентируйте внимание клиента на том, что Merende --- это гибрид кардигана и легкого жакета. Благодаря плотной вязке и воротнику-стойке, он держит форму лучше обычного трикотажа, что позволяет носить его как самостоятельную верхнюю одежду в прохладные дни. - Игра фактур: Предложите клиенту оценить сочетание диагональной вязки и узора «елочка». Этот визуальный прием не только добавляет изделию дороговизны, но и создает динамичные линии, которые визуально дисциплинируют силуэт. - Статус в деталях: Обратите внимание на пуговицы из натурального рога. Это маркер высокого качества и приверженности бренда Luisa Spagnoli к натуральным, долговечным материалам, что значительно повышает ценность вещи в глазах ценителя роскоши."
+    ]
+  },
+  "objections": {
+    "en": [
+      {
+        "q": "",
+        "a": "Objection Overcoming Strategy «The blouson might Point out the high cuffs and the knit structure. add bulk at the The raglan sleeve softens the shoulder line, waist» while the dense herringbone knit across the chest creates a vertical focal point that balances the volume. «A wool blend is Explain that a complex architectural knit with less prestigious diagonal elements requires the addition of than 100%» specialty fibers to maintain shape retention and the piece's longevity. «The stand collar Showcase Look 55: the buttons allow you to seems too vary the depth of the neckline. Left open, the closed» collar transforms into elegant lapels, revealing the dÃ©colletage. «The design looks On the contrary, \"British Heritage\" style is the too rustic» season's leading trend. Paired with the Lusia 3402 silk blouse or Opaglio 0927 jeans, the jacket reads as fashion-forward. «I'm worried the The dense knit and raglan cut minimize strain on knit will stretch out the fabric at the elbows, allowing the jacket to at the elbows» retain its pristine look even with regular wear"
+      }
+    ],
+    "ru": [
+      {
+        "q": "Блузон может",
+        "a": "на высокие манжеты и структуру вязки. Рукав полнить в зоне реглан смягчает линию плеча, а плотная вязка талии."
+      },
+      {
+        "q": "Смесовая шерсть",
+        "a": "что сложная архитектурная вязка с менее престижна, чем диагональными элементами требует добавления 100% специальных волокон для поддержания формоустойчивости и долговечности изделия."
+      },
+      {
+        "q": "Воротник-стойка",
+        "a": "Look 55: пуговицы позволяют кажется слишком варьировать глубину выреза. В расстегнутом виде закрытым воротник превращается в элегантные лацканы, открывая портретную зону."
+      },
+      {
+        "q": "British",
+        "a": "Heritage города главный тренд слишком сезона. В сочетании с шелковой блузой Lusia 3402 по-деревенски» или джинсами Opaglio 0927 жакет выглядит остромодно."
+      },
+      {
+        "q": "Боюсь, что",
+        "a": "Специфика плотной вязки и крой реглан минимизируют трикотаж растянется натяжение полотна в локтевой зоне, позволяя жакету на локтях сохранять первозданный вид при активной носке."
+      }
+    ]
+  }
+}

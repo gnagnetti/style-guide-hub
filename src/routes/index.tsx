@@ -15,7 +15,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Training Material Fall Winter 2026/2027 | Luisa Spagnoli" },
       {
         property: "og:description",
-        content: "Search all 273 models of the Luisa Spagnoli FW 2026/2027 collection and open their training sheets.",
+        content:
+          "Search all 273 models of the Luisa Spagnoli FW 2026/2027 collection and open their training sheets.",
       },
     ],
   }),
@@ -27,7 +28,9 @@ function Index() {
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-10">
-      <h1 className="font-display text-3xl leading-tight font-semibold text-foreground">{t("pageTitle")}</h1>
+      <h1 className="font-display text-3xl leading-tight font-semibold text-foreground">
+        {t("pageTitle")}
+      </h1>
       <div className="mt-3 h-px w-16 bg-gold" />
       <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{t("intro")}</p>
 

@@ -1,11 +1,34 @@
 import { useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, Award, CheckCircle2, Download, HelpCircle, Home, LoaderCircle, Sparkles, TrendingUp } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  ArrowLeft,
+  Award,
+  CheckCircle2,
+  Download,
+  HelpCircle,
+  Home,
+  LoaderCircle,
+  Sparkles,
+  TrendingUp,
+} from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { ImageTile } from "@/components/ImageTile";
 import { Lightbox } from "@/components/Lightbox";
-import { heroImage, loadModel, type Model } from "@/lib/models";
+import { ModelPicker } from "@/components/ModelPicker";
+import {
+  heroImage,
+  loadModel,
+  modelIndex,
+  getLookTitle,
+  getLookText,
+  type Model,
+} from "@/lib/models";
 import { useLanguage } from "@/lib/language";
 
 export const Route = createFileRoute("/model/$id")({
@@ -16,7 +39,9 @@ export const Route = createFileRoute("/model/$id")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Unavailable | Luisa Spagnoli" }, { name: "robots", content: "noindex" }] };
+      return {
+        meta: [{ title: "Unavailable | Luisa Spagnoli" }, { name: "robots", content: "noindex" }],
+      };
     }
     const { model } = loaderData;
     const title = `${model.name} — Training Material FW 2026/2027 | Luisa Spagnoli`;
@@ -51,9 +76,19 @@ function ModelPage() {
   const [pdfState, setPdfState] = useState<"idle" | "loading" | "error">("idle");
 
   const hero = heroImage(model);
-  const advice = model.advice[lang].length ? model.advice[lang] : model.advice.en;
-  const objections = model.objections[lang].length ? model.objections[lang] : model.objections.ru;
-  const description = model.description[lang] || model.description.en;
+  const advice =
+    model.advice[lang] && model.advice[lang].length > 0
+      ? model.advice[lang]
+      : model.advice.en && model.advice.en.length > 0
+        ? model.advice.en
+        : model.advice.ru || [];
+  const objections =
+    model.objections[lang] && model.objections[lang].length > 0
+      ? model.objections[lang]
+      : model.objections.en && model.objections.en.length > 0
+        ? model.objections.en
+        : model.objections.ru || [];
+  const description = model.description[lang] || model.description.en || model.description.ru || "";
 
   const handlePdfDownload = async () => {
     if (pdfState === "loading") return;
@@ -69,11 +104,18 @@ function ModelPage() {
 
   return (
     <main className="mx-auto max-w-2xl px-4 pt-6 pb-16">
+      <div className="mb-6 rounded-sm border border-border bg-card p-5 shadow-sm">
+        <ModelPicker currentModelId={model.id} />
+        <p className="mt-4 text-center text-[11px] tracking-widest text-muted-foreground uppercase">
+          {modelIndex.length} {t("models")}
+        </p>
+      </div>
+
       <Link
         to="/"
         className="inline-flex items-center gap-1.5 text-xs tracking-widest text-muted-foreground uppercase transition-colors hover:text-gold"
       >
-        <ArrowLeft className="h-3.5 w-3.5" /> {t("back")}
+        <ArrowLeft className="h-3.5 w-3.5 rtl:rotate-180" /> {t("back")}
       </Link>
 
       <header className="mt-4">
@@ -95,7 +137,9 @@ function ModelPage() {
 
       {description && (
         <Section title={t("description")}>
-          <p className="text-[15px] leading-relaxed whitespace-normal text-foreground/90">{description}</p>
+          <p className="text-[15px] leading-relaxed whitespace-normal text-foreground/90">
+            {description}
+          </p>
         </Section>
       )}
 
@@ -109,7 +153,8 @@ function ModelPage() {
                   alt={`${model.name} ${c.name}`}
                   className="aspect-[3/4] w-full"
                   onClick={() =>
-                    c.imageUrl && setZoom({ src: c.imageUrl, caption: `${model.name} — ${c.name} (${c.code})` })
+                    c.imageUrl &&
+                    setZoom({ src: c.imageUrl, caption: `${model.name} — ${c.name} (${c.code})` })
                   }
                 />
                 <figcaption className="mt-1.5 text-xs leading-snug text-foreground">
@@ -125,46 +170,60 @@ function ModelPage() {
       {model.looks.length > 0 && (
         <Section title={t("styling")}>
           <div className="space-y-5">
-            {model.looks.map((look, i) => (
-              <article key={i} className="rounded-sm border border-border bg-card p-4 shadow-sm">
-                {look.title && (
-                  <h3 className="font-display text-sm tracking-wide text-gold">{look.title}</h3>
-                )}
-                <p className="mt-2 text-sm leading-relaxed whitespace-normal text-foreground/90">{look.text}</p>
-                {look.items.length > 0 && (
-                  <div className="mt-4 -mx-1 flex snap-x gap-3 overflow-x-auto px-1 pb-1">
-                    {look.items.map((it, k) => {
-                      const caption = `${it.name} ${it.code}`.trim();
-                      const tile = (
-                        <>
-                          <ImageTile src={it.imageUrl} alt={caption} className="aspect-[3/4] w-full" />
-                          <p className="mt-1.5 text-xs leading-snug font-medium text-foreground">{it.name}</p>
-                          <p className="text-[11px] text-muted-foreground">{it.code}</p>
-                        </>
-                      );
-                      return it.modelId ? (
-                        <Link
-                          key={k}
-                          to="/model/$id"
-                          params={{ id: String(it.modelId) }}
-                          className="w-28 shrink-0 snap-start"
-                        >
-                          {tile}
-                        </Link>
-                      ) : (
-                        <div
-                          key={k}
-                          className="w-28 shrink-0 snap-start"
-                          onClick={() => it.imageUrl && setZoom({ src: it.imageUrl, caption })}
-                        >
-                          {tile}
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </article>
-            ))}
+            {model.looks.map((look, i) => {
+              const lookTitle = getLookTitle(look, lang);
+              const lookText = getLookText(look, lang);
+              return (
+                <article key={i} className="rounded-sm border border-border bg-card p-4 shadow-sm">
+                  {lookTitle && (
+                    <h3 className="font-display text-sm tracking-wide text-gold">{lookTitle}</h3>
+                  )}
+                  {lookText && (
+                    <p className="mt-2 text-sm leading-relaxed whitespace-normal text-foreground/90">
+                      {lookText}
+                    </p>
+                  )}
+                  {look.items.length > 0 && (
+                    <div className="mt-4 -mx-1 flex snap-x gap-3 overflow-x-auto px-1 pb-1">
+                      {look.items.map((it, k) => {
+                        const caption = `${it.name} ${it.code}`.trim();
+                        const tile = (
+                          <>
+                            <ImageTile
+                              src={it.imageUrl}
+                              alt={caption}
+                              className="aspect-[3/4] w-full"
+                            />
+                            <p className="mt-1.5 text-xs leading-snug font-medium text-foreground">
+                              {it.name}
+                            </p>
+                            <p className="text-[11px] text-muted-foreground">{it.code}</p>
+                          </>
+                        );
+                        return it.modelId ? (
+                          <Link
+                            key={k}
+                            to="/model/$id"
+                            params={{ id: String(it.modelId) }}
+                            className="w-28 shrink-0 snap-start"
+                          >
+                            {tile}
+                          </Link>
+                        ) : (
+                          <div
+                            key={k}
+                            className="w-28 shrink-0 snap-start"
+                            onClick={() => it.imageUrl && setZoom({ src: it.imageUrl, caption })}
+                          >
+                            {tile}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </article>
+              );
+            })}
           </div>
         </Section>
       )}
@@ -178,9 +237,13 @@ function ModelPage() {
                 <div key={i} className="rounded-sm border border-border bg-card p-4 shadow-sm">
                   <div className="flex items-center gap-2">
                     <Icon className="h-4 w-4 text-gold" aria-hidden />
-                    <span className="font-display text-sm text-gold">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="font-display text-sm text-gold">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed whitespace-normal text-foreground/90">{a}</p>
+                  <p className="mt-2 text-sm leading-relaxed whitespace-normal text-foreground/90">
+                    {a}
+                  </p>
                 </div>
               );
             })}
@@ -197,7 +260,7 @@ function ModelPage() {
                 value={`o-${i}`}
                 className="overflow-visible rounded-sm border border-border bg-champagne px-4"
               >
-                <AccordionTrigger className="gap-3 py-3 text-left hover:no-underline">
+                <AccordionTrigger className="gap-3 py-3 text-start hover:no-underline">
                   <span className="flex items-start gap-2">
                     <HelpCircle className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden />
                     <span className="h-auto text-sm font-semibold break-words whitespace-normal text-foreground">
@@ -206,7 +269,7 @@ function ModelPage() {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="overflow-visible pb-4">
-                  <div className="flex items-start gap-2 border-l-4 border-gold bg-card p-3">
+                  <div className="flex items-start gap-2 border-s-4 border-gold bg-card p-3">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden />
                     <p className="h-auto text-sm leading-relaxed break-words whitespace-normal text-foreground/90">
                       {o.a}
@@ -219,8 +282,16 @@ function ModelPage() {
         </Section>
       )}
 
-      <nav className="mt-12 grid gap-3 border-t border-border pt-6 sm:grid-cols-2" aria-label="Model actions">
-        <Button type="button" size="lg" onClick={handlePdfDownload} disabled={pdfState === "loading"}>
+      <nav
+        className="mt-12 grid gap-3 border-t border-border pt-6 sm:grid-cols-2"
+        aria-label="Model actions"
+      >
+        <Button
+          type="button"
+          size="lg"
+          onClick={handlePdfDownload}
+          disabled={pdfState === "loading"}
+        >
           {pdfState === "loading" ? (
             <LoaderCircle className="animate-spin" aria-hidden />
           ) : (
@@ -240,7 +311,11 @@ function ModelPage() {
         )}
       </nav>
 
-      <Lightbox src={zoom?.src ?? null} caption={zoom?.caption ?? ""} onClose={() => setZoom(null)} />
+      <Lightbox
+        src={zoom?.src ?? null}
+        caption={zoom?.caption ?? ""}
+        onClose={() => setZoom(null)}
+      />
     </main>
   );
 }
@@ -248,7 +323,9 @@ function ModelPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-9">
-      <h2 className="font-display text-xs tracking-[0.25em] text-muted-foreground uppercase">{title}</h2>
+      <h2 className="font-display text-xs tracking-[0.25em] text-muted-foreground uppercase">
+        {title}
+      </h2>
       <div className="mt-1 mb-4 h-px w-10 bg-gold" />
       {children}
     </section>

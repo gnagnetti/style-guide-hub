@@ -1,1 +1,68 @@
-{"id": 1, "name": "Cadino", "description": {"en": "This exquisite pullover from Luisa Spagnoli's carded knitwear manufactory embodies a harmonious union of warmth and high fashion. Cut in a Regular fit silhouette, the piece is crafted from a noble wool and cashmere blend enriched with viscose for exceptional softness. The signature stylistic accent is a wide round neckline, finished with a delicate raw-edge lace insert that lends the look a note of aristocratic sensuality. Long sleeves with raw-edge cuffs complete this refined design.", "ru": "Этот изысканный пуловер из категории кардной мануфактуры Luisa Spagnoli представляет собой гармоничное сочетание тепла и высокой моды. Модель прямого силуэта (Regular fit) выполнена из благородной смеси шерсти и кашемира с добавлением вискозы для исключительной мягкости. Главным стилистическим акцентом является широкий круглый вырез, дополненный нежной вставкой из несшитого кружева, которая придает образу ноту аристократичной чувственности. Длинные рукава с открытыми краями завершают утонченный дизайн этого изделия."}, "colors": [{"name": "Beige Tortora", "code": "1142 1122", "imageUrl": null}], "looks": [], "advice": {"en": ["Draw the client's attention to the luxurious composition: the presence of cashmere and wool ensures impeccable thermoregulation and tactile comfort.", "Present the piece as the perfect solution for transitioning from a daytime professional look to an evening appearance, thanks to its exquisite lace insert.", "Emphasize the contemporary cut: the open cuffs are this season's leading trend, setting this piece apart from classic knitwear."], "ru": ["Акцентируйте внимание клиента на роскошном составе: наличие кашемира и шерсти обеспечивает безупречную терморегуляцию и тактильный комфорт.", "Предложите модель как идеальное решение для перехода от дневного делового образа к вечернему выходу благодаря изысканной кружевной вставке.", "Подчеркните современность кроя: открытые манжеты — актуальный тренд сезона, который выделяет эту модель на фоне классического трикотажа."]}, "objections": {"en": [{"q": "The lace insert seems too delicate for everyday knitwear.", "a": "The lace is integrated into the structure of the piece using a high-quality polyamide, which guarantees the decoration retains its shape and durability with proper care."}, {"q": "Concern that carded wool may feel uncomfortable against the skin.", "a": "The yarn blend includes 30% viscose and 5% cashmere, giving the knit a silky, pleasant texture even for the most sensitive skin."}, {"q": "The model seems too loose-fitting.", "a": "The Regular fit is specifically designed to create an elegant yet relaxed silhouette that flatters the figure without restricting movement."}, {"q": "The beige shade (Tortora) may look pale.", "a": "This sophisticated shade is a 'Quiet Luxury' classic. It pairs beautifully with contrasting gold-tone accessories, such as bags from the LS1928 line."}, {"q": "How should this combined-fabric piece be cared for?", "a": "We recommend professional cleaning or exclusively gentle hand-washing, to preserve the volume of the wool structure and protect the delicate lace."}], "ru": [{"q": "Кружевная вставка кажется слишком деликатной для повседневного трикотажа.", "a": "Кружево интегрировано в структуру изделия с использованием высококачественного полиамида, что гарантирует сохранение формы и долговечность декора при правильном уходе."}, {"q": "Боязнь, что кардная шерсть может вызывать дискомфорт на коже.", "a": "В состав пряжи входит 30% вискозы и 5% кашемира, что делает текстуру полотна шелковистой и приятной даже для самой чувствительной кожи."}, {"q": "Модель кажется слишком свободной.", "a": "Посадка Regular fit разработана специально для создания элегантного, но расслабленного силуэта, который подчеркивает достоинства фигуры, не стесняя движений."}, {"q": "Бежевый цвет (Tortora) может выглядеть бледно.", "a": "Этот сложный оттенок является классикой 'тихой роскоши'. Он идеально сочетается с контрастными аксессуарами в золотом исполнении, такими как сумки линии LS1928."}, {"q": "Как ухаживать за таким комбинированным изделием?", "a": "Мы рекомендуем профессиональную чистку или исключительно бережную ручную стирку, чтобы сохранить объемную структуру шерсти и не повредить тонкое кружево."}]}}
+{
+  "id": 1,
+  "name": "Cadino",
+  "description": {
+    "en": "This exquisite pullover from Luisa Spagnoli's carded knitwear manufactory embodies a harmonious union of warmth and high fashion. Cut in a Regular fit silhouette, the piece is crafted from a noble wool and cashmere blend enriched with viscose for exceptional softness. The signature stylistic accent is a wide round neckline, finished with a delicate raw-edge lace insert that lends the look a note of aristocratic sensuality. Long sleeves with raw-edge cuffs complete this refined design.",
+    "ru": "Этот изысканный пуловер из категории кардной мануфактуры Luisa Spagnoli представляет собой гармоничное сочетание тепла и высокой моды. Модель прямого силуэта (Regular fit) выполнена из благородной смеси шерсти и кашемира с добавлением вискозы для исключительной мягкости. Главным стилистическим акцентом является широкий круглый вырез, дополненный нежной вставкой из несшитого кружева, которая придает образу ноту аристократичной чувственности. Длинные рукава с открытыми краями завершают утонченный дизайн этого изделия."
+  },
+  "colors": [{ "name": "Beige Tortora", "code": "1142 1122", "imageUrl": null }],
+  "looks": [],
+  "advice": {
+    "en": [
+      "Draw the client's attention to the luxurious composition: the presence of cashmere and wool ensures impeccable thermoregulation and tactile comfort.",
+      "Present the piece as the perfect solution for transitioning from a daytime professional look to an evening appearance, thanks to its exquisite lace insert.",
+      "Emphasize the contemporary cut: the open cuffs are this season's leading trend, setting this piece apart from classic knitwear."
+    ],
+    "ru": [
+      "Акцентируйте внимание клиента на роскошном составе: наличие кашемира и шерсти обеспечивает безупречную терморегуляцию и тактильный комфорт.",
+      "Предложите модель как идеальное решение для перехода от дневного делового образа к вечернему выходу благодаря изысканной кружевной вставке.",
+      "Подчеркните современность кроя: открытые манжеты — актуальный тренд сезона, который выделяет эту модель на фоне классического трикотажа."
+    ]
+  },
+  "objections": {
+    "en": [
+      {
+        "q": "The lace insert seems too delicate for everyday knitwear.",
+        "a": "The lace is integrated into the structure of the piece using a high-quality polyamide, which guarantees the decoration retains its shape and durability with proper care."
+      },
+      {
+        "q": "Concern that carded wool may feel uncomfortable against the skin.",
+        "a": "The yarn blend includes 30% viscose and 5% cashmere, giving the knit a silky, pleasant texture even for the most sensitive skin."
+      },
+      {
+        "q": "The model seems too loose-fitting.",
+        "a": "The Regular fit is specifically designed to create an elegant yet relaxed silhouette that flatters the figure without restricting movement."
+      },
+      {
+        "q": "The beige shade (Tortora) may look pale.",
+        "a": "This sophisticated shade is a 'Quiet Luxury' classic. It pairs beautifully with contrasting gold-tone accessories, such as bags from the LS1928 line."
+      },
+      {
+        "q": "How should this combined-fabric piece be cared for?",
+        "a": "We recommend professional cleaning or exclusively gentle hand-washing, to preserve the volume of the wool structure and protect the delicate lace."
+      }
+    ],
+    "ru": [
+      {
+        "q": "Кружевная вставка кажется слишком деликатной для повседневного трикотажа.",
+        "a": "Кружево интегрировано в структуру изделия с использованием высококачественного полиамида, что гарантирует сохранение формы и долговечность декора при правильном уходе."
+      },
+      {
+        "q": "Боязнь, что кардная шерсть может вызывать дискомфорт на коже.",
+        "a": "В состав пряжи входит 30% вискозы и 5% кашемира, что делает текстуру полотна шелковистой и приятной даже для самой чувствительной кожи."
+      },
+      {
+        "q": "Модель кажется слишком свободной.",
+        "a": "Посадка Regular fit разработана специально для создания элегантного, но расслабленного силуэта, который подчеркивает достоинства фигуры, не стесняя движений."
+      },
+      {
+        "q": "Бежевый цвет (Tortora) может выглядеть бледно.",
+        "a": "Этот сложный оттенок является классикой 'тихой роскоши'. Он идеально сочетается с контрастными аксессуарами в золотом исполнении, такими как сумки линии LS1928."
+      },
+      {
+        "q": "Как ухаживать за таким комбинированным изделием?",
+        "a": "Мы рекомендуем профессиональную чистку или исключительно бережную ручную стирку, чтобы сохранить объемную структуру шерсти и не повредить тонкое кружево."
+      }
+    ]
+  }
+}

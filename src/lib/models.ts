@@ -1,6 +1,6 @@
 import index from "@/data/index.json";
 
-export type Lang = "en" | "ru";
+export type Lang = "en" | "ru" | "ar" | "hy" | "ka" | "uk" | "lv" | "lt" | "pl";
 
 export interface ColorVariant {
   name: string;
@@ -16,9 +16,21 @@ export interface OutfitItem {
 }
 
 export interface Look {
-  title: string | null;
-  text: string;
+  title: Record<string, string | null> | string | null;
+  text: Record<string, string> | string;
   items: OutfitItem[];
+}
+
+export function getLookTitle(look: Look, lang: string): string | null {
+  if (!look.title) return null;
+  if (typeof look.title === "string") return look.title;
+  return look.title[lang] || look.title.en || look.title.ru || null;
+}
+
+export function getLookText(look: Look, lang: string): string {
+  if (!look.text) return "";
+  if (typeof look.text === "string") return look.text;
+  return look.text[lang] || look.text.en || look.text.ru || "";
 }
 
 export interface Objection {
@@ -29,11 +41,11 @@ export interface Objection {
 export interface Model {
   id: number;
   name: string;
-  description: Record<Lang, string>;
+  description: Record<string, string>;
   colors: ColorVariant[];
   looks: Look[];
-  advice: Record<Lang, string[]>;
-  objections: Record<Lang, Objection[]>;
+  advice: Record<string, string[]>;
+  objections: Record<string, Objection[]>;
 }
 
 export const modelIndex: { id: number; name: string }[] = index;

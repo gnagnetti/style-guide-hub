@@ -1,1 +1,262 @@
-{"id": 451, "name": "Odini", "description": {"en": "The Odini trousers are the flawless embodiment of timeless Italian tailoring and Luisa Spagnoli's intellectual elegance. Crafted from a noble wool blend (misto lana), which unites the softness of natural fiber with the practicality demanded by a dynamic pace of life. The piece's architecture is considered down to the smallest detail: open pintucks (pinces) at the waist lend freedom of movement and create noble volume, while a perfectly pressed crease (piega stirata) forms a disciplined vertical line that visually elongates the silhouette. Traditional French pockets and elegant back welt pockets (a filetto) underscore the piece's status. Thanks to the classic Regular fit (vestibilitÃ regolare) and belt loops, the Odini trousers become the flawless foundation for creating both status-defining two-piece business suits and relaxed 'City Chic' looks.", "ru": "Брюки Odini --- это безупречное воплощение вневременного итальянского тейлоринга и интеллектуальной элегантности Luisa Spagnoli. Модель выполнена из благородной смесовой шерсти (misto lana), которая сочетает в себе мягкость натурального волокна и практичность, необходимую для динамичного ритма жизни. Архитектура изделия продумана до мелочей: открытые защипы (pinces) у пояса дарят свободу движений и создают благородный объем, а идеально заутюженная стрелка (piega stirata) формирует строгую вертикаль, визуально вытягивающую силуэт. Традиционные французские карманы и изящные задние карманы «в рамку» (a filetto) подчеркивают статус изделия. Благодаря классической регулярной посадке (vestibilità regolare) и наличию шлевок для ремня, брюки Odini становятся безупречным фундаментом для создания как статусных деловых костюмов-двоек, так и расслабленных образов в стиле «City Chic»."}, "colors": [{"name": "Verde Militare", "code": "1789", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/pLfifpMXRCmVcSHvIaEzMg_905103448696f42e421e330_54955005_02820590XX1.jpg"}, {"name": "Bluette", "code": "2527", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/yLie7KkdTOiiId5CrV5e2Q_857147775696f43030a14f5_50093958_02821290XX1.jpg"}, {"name": "Mattone", "code": "1547", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1190273499692424d3a44493_94003181_02781350XX1.jpg"}, {"name": "Nero", "code": "0101", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/pLfifpMXRCmVcSHvIaEzMg_905103448696f42e421e330_54955005_02820590XX1.jpg"}, {"name": "Rosa", "code": "0326", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1000796252692424d4084125_63956219_02781360XX1.jpg"}], "looks": [{"title": null, "text": "Стилисты бренда предлагают использовать брюки Odini как ключевой элемент для создания тотал-луков и многослойных ансамблей: Вариант 0326 ( Серый): Look 60: каноническое костюмное сочетание с жакетом в тон Salve A 0326 и рубашкой Legale B 0385.", "items": [{"name": "Salve A", "code": "0326", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1393038525692424d90fc184_00755460_02781540XX1.jpg", "modelId": 294}, {"name": "Legale B", "code": "0385", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1527137582692424ce337d89_79472607_02781190XX1.jpg"}]}, {"title": "Vetrina 62 (Bambola 1)", "text": "современный сет с жакетом Salve 0326 и шелковым топом Lezioni 0101. Вариант 1547 ( Песочный):", "items": [{"name": "Salve", "code": "0326", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1393038525692424d90fc184_00755460_02781540XX1.jpg"}, {"name": "Lezioni", "code": "0101", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/205334736692424cee9f311_65701167_02781220XX1.jpg", "modelId": 415}]}, {"title": "Look 90", "text": "элегантный монохромный образ с двубортным жакетом Serenella 1547.", "items": [{"name": "Serenella", "code": "1547", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/531490407691f1568569555_18801954_02780610XX1.jpg", "modelId": 314}]}, {"title": "Vetrina 23/24 (Bambola 1)", "text": "статусный деловой выход с жакетом Serenella 1547 и черной рубашкой Lidia 0101, дополненный сумкой LS1928GP 0101 0038. Вариант 1789 ( Бежевый):", "items": [{"name": "Serenella", "code": "1547", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/531490407691f1568569555_18801954_02780610XX1.jpg", "modelId": 314}, {"name": "Lidia", "code": "0101", "imageUrl": null}, {"name": "LS1928GP", "code": "0101 0038", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/LS1928GP_10100180000.jpg"}]}, {"title": "Look 188", "text": "гармоничный ансамбль с жакетом Salve A 1789 и принтованной рубашкой Lunotto 3418.", "items": [{"name": "Salve A", "code": "1789", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/vxWux3ofS5SFEVbTaGH9Cg_99445790696f42f07c9277_19680844_02820850XX1.jpg", "modelId": 294}, {"name": "Lunotto", "code": "3418", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/LUNOTTO_0.jpg", "modelId": 128}]}, {"title": "Vetrina 48/49", "text": "предлагается сочетать с жакетом Salve 1789 и рубашками Liceali 3200 или Lucinda 0201 под защитой кашемирового кабана Segreteria 1751. Вариант 2527 ( Бордо):", "items": [{"name": "Salve", "code": "1789", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/vxWux3ofS5SFEVbTaGH9Cg_99445790696f42f07c9277_19680844_02820850XX1.jpg"}, {"name": "Liceali", "code": "3200", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/S82WH97wQzu4sRcO5wWaUQ_2103315294696f4306d83529_32198325_02821400XX1.jpg"}, {"name": "Lucinda", "code": "0201", "imageUrl": null}, {"name": "Segreteria", "code": "1751", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1177856364692424dbb18d31_39928106_02781600XX1.jpg", "modelId": 479}]}, {"title": "Look 217", "text": "изысканный костюм с укороченным жакетом Serenella 2527.", "items": [{"name": "Serenella", "code": "2527", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/A3abRVUzTIC2qwZhUoAVDA_1978587936696f42f5250e37_36989507_02820970XX1.jpg", "modelId": 314}]}, {"title": "Vetrina 89 (Bambola 3)", "text": "сложный зимний образ под пальто Scansione 0961 в сочетании с жакетом Serenella 2527 и пуловером Mossa 0970. Вариант 0101 ( Черный):", "items": [{"name": "Scansione", "code": "0961", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/WDu1Ie_2TLCfXS6sapBREA_929555794696f42f1be1be1_27317241_02820880XX1.jpg", "modelId": 302}, {"name": "Serenella", "code": "2527", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/A3abRVUzTIC2qwZhUoAVDA_1978587936696f42f5250e37_36989507_02820970XX1.jpg", "modelId": 314}, {"name": "Mossa", "code": "0970", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/7b9e70ac-1f12-46cb-beea-852f7a2328f9-removebg-preview.png"}]}, {"title": "Vetrina 54 (Bambola 2)", "text": "динамичный городской сет с укороченным кабаном Spillatrice 3470 0913 и трикотажным поло Mlacaria 0101.", "items": [{"name": "Spillatrice", "code": "3470 0913", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/0672eeac-225d-415a-a979-5986802b98c8-removebg-preview.png", "modelId": 338}, {"name": "Mlacaria", "code": "0101", "imageUrl": null}]}, {"title": "Vetrina 108 (Bambola 2)", "text": "вечерний деловой образ с жакетом Meltina 2439 и белой рубашкой Loriana 0201.", "items": [{"name": "Meltina", "code": "2439", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1197999749691f1574dbd530_20416087_02790380XX1.jpg", "modelId": 439}, {"name": "Loriana", "code": "0201", "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/153074450692424d097e944_13615490_02781260XX1.jpg", "modelId": 425}]}], "advice": {"en": ["- Mastery of silhouette: Direct the client's attention to the pinces (darts). Explain that this element not only gives the trousers an on-trend 'masculine' character, but also ensures a perfect fit through the hips, concealing figure nuances and offering comfort while seated. - A textile investment: Highlight the advantages of the wool-blend fabric. It offers excellent shape retention: the crease on the Odini trousers will remain impeccably sharp throughout the working day, which is essential for maintaining a status-defining appearance. - Total Look versatility: Suggest the client acquire the trousers paired with the matching jacket (Salve or Serenella). This creates a powerful foundation for a modular wardrobe: the suit can be worn in its entirety for important meetings, or its pieces separated, pairing the trousers with Luisa Spagnoli knitwear for more relaxed occasions."], "ru": ["- Мастерство силуэта: Акцентируйте внимание клиента на защипах (pinces). Объясните, что этот элемент не только придает брюкам актуальный «мужской» характер, но и обеспечивает идеальную посадку в области бедер, скрывая нюансы фигуры и даря комфорт при сидении. - Текстильная инвестиция: Подчеркните преимущества смесовой шерсти. Она обладает высокой формоустойчивостью: стрелка на брюках Odini будет оставаться безупречно острой в течение всего рабочего дня, что критически важно для поддержания статусного вида. - Вариативность Total Look: Предложите клиенту приобрести брюки в паре с соответствующим жакетом (Salve или Serenella). Это создаст мощную базу для гардероба-конструктора: костюм можно носить целиком для важных встреч или разделять детали, сочетая брюки с трикотажем Luisa Spagnoli для более расслабленных выходов."]}, "objections": {"en": [{"q": "", "a": "Objection Overcoming Strategy «The waist pleats Explain that in the Odini model, the pleats are might add \"open\" and soft. Paired with the high waist and unwanted volume» pressed crease, they, in fact, create the right geometry that slims and elongates the legs. «A wool blend Remind the client that adding modern fibers to seems less wool is the key to a piece's longevity. The prestigious» trousers wrinkle less and don't stretch out at the knees, preserving the LS brand's aesthetic for a long time. «The creases Point out the high quality of the tailoring. In require too much Luisa Spagnoli pieces, the crease is set during upkeep» production so that it's easy to maintain with minimal home care or steaming. «The classic cut Showcase Vetrina 54: paired with the Mlacaria looks too formal» 0101 polo and a short bomber jacket, the trousers become the foundation for a fashion-forward \"Sport-Luxe\" look. «The width of the Point out the regular cut (vestibilitÃ regolare). trouser legs seems This is the perfect middle ground between slim excessive» styles and oversized fits, ensuring the trousers stay relevant regardless of shifting trends."}], "ru": [{"q": "", "a": "Возражение Стратегия преодоления «Защипы на талии Поясните, что в модели Odini защипы «открытые» могут добавлять и мягкие. В сочетании с высокой посадкой и лишний объем» заутюженной стрелкой они, напротив, создают правильную геометрию, которая стройнит и удлиняет ноги. «Смесовая шерсть Напомните, что добавление современных волокон к кажется менее шерсти --- это залог долговечности изделия. Брюки престижной» меньше мнутся и не вытягиваются на коленях, сохраняя эстетику бренда LS долгое время. «Стрелки требуют Укажите на высокое качество портновской обработки. слишком сложного В изделиях Luisa Spagnoli стрелка фиксируется на ухода» этапе производства так, чтобы её было легко поддерживать при минимальном домашнем уходе или отпаривании. «Классический Продемонстрируйте Vetrina 54: в сочетании с поло фасон выглядит Mlacaria 0101 и коротким кабаном брюки слишком превращаются в основу для остромодного образа в официально» стиле «Sport-Luxe». «Ширина брючин Обратите внимание на регулярный крой (vestibilità кажется regolare). Это золотая середина между узкими избыточной» моделями и оверсайзом, которая гарантирует актуальность брюк вне зависимости от переменчивых трендов."}]}}
+{
+  "id": 451,
+  "name": "Odini",
+  "description": {
+    "en": "The Odini trousers are the flawless embodiment of timeless Italian tailoring and Luisa Spagnoli's intellectual elegance. Crafted from a noble wool blend (misto lana), which unites the softness of natural fiber with the practicality demanded by a dynamic pace of life. The piece's architecture is considered down to the smallest detail: open pintucks (pinces) at the waist lend freedom of movement and create noble volume, while a perfectly pressed crease (piega stirata) forms a disciplined vertical line that visually elongates the silhouette. Traditional French pockets and elegant back welt pockets (a filetto) underscore the piece's status. Thanks to the classic Regular fit (vestibilitÃ regolare) and belt loops, the Odini trousers become the flawless foundation for creating both status-defining two-piece business suits and relaxed 'City Chic' looks.",
+    "ru": "Брюки Odini --- это безупречное воплощение вневременного итальянского тейлоринга и интеллектуальной элегантности Luisa Spagnoli. Модель выполнена из благородной смесовой шерсти (misto lana), которая сочетает в себе мягкость натурального волокна и практичность, необходимую для динамичного ритма жизни. Архитектура изделия продумана до мелочей: открытые защипы (pinces) у пояса дарят свободу движений и создают благородный объем, а идеально заутюженная стрелка (piega stirata) формирует строгую вертикаль, визуально вытягивающую силуэт. Традиционные французские карманы и изящные задние карманы «в рамку» (a filetto) подчеркивают статус изделия. Благодаря классической регулярной посадке (vestibilità regolare) и наличию шлевок для ремня, брюки Odini становятся безупречным фундаментом для создания как статусных деловых костюмов-двоек, так и расслабленных образов в стиле «City Chic»."
+  },
+  "colors": [
+    {
+      "name": "Verde Militare",
+      "code": "1789",
+      "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/pLfifpMXRCmVcSHvIaEzMg_905103448696f42e421e330_54955005_02820590XX1.jpg"
+    },
+    {
+      "name": "Bluette",
+      "code": "2527",
+      "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/yLie7KkdTOiiId5CrV5e2Q_857147775696f43030a14f5_50093958_02821290XX1.jpg"
+    },
+    {
+      "name": "Mattone",
+      "code": "1547",
+      "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1190273499692424d3a44493_94003181_02781350XX1.jpg"
+    },
+    {
+      "name": "Nero",
+      "code": "0101",
+      "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/pLfifpMXRCmVcSHvIaEzMg_905103448696f42e421e330_54955005_02820590XX1.jpg"
+    },
+    {
+      "name": "Rosa",
+      "code": "0326",
+      "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1000796252692424d4084125_63956219_02781360XX1.jpg"
+    }
+  ],
+  "looks": [
+    {
+      "title": null,
+      "text": "Стилисты бренда предлагают использовать брюки Odini как ключевой элемент для создания тотал-луков и многослойных ансамблей: Вариант 0326 ( Серый): Look 60: каноническое костюмное сочетание с жакетом в тон Salve A 0326 и рубашкой Legale B 0385.",
+      "items": [
+        {
+          "name": "Salve A",
+          "code": "0326",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1393038525692424d90fc184_00755460_02781540XX1.jpg",
+          "modelId": 294
+        },
+        {
+          "name": "Legale B",
+          "code": "0385",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1527137582692424ce337d89_79472607_02781190XX1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Vetrina 62 (Bambola 1)",
+      "text": "современный сет с жакетом Salve 0326 и шелковым топом Lezioni 0101. Вариант 1547 ( Песочный):",
+      "items": [
+        {
+          "name": "Salve",
+          "code": "0326",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1393038525692424d90fc184_00755460_02781540XX1.jpg"
+        },
+        {
+          "name": "Lezioni",
+          "code": "0101",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/205334736692424cee9f311_65701167_02781220XX1.jpg",
+          "modelId": 415
+        }
+      ]
+    },
+    {
+      "title": "Look 90",
+      "text": "элегантный монохромный образ с двубортным жакетом Serenella 1547.",
+      "items": [
+        {
+          "name": "Serenella",
+          "code": "1547",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/531490407691f1568569555_18801954_02780610XX1.jpg",
+          "modelId": 314
+        }
+      ]
+    },
+    {
+      "title": "Vetrina 23/24 (Bambola 1)",
+      "text": "статусный деловой выход с жакетом Serenella 1547 и черной рубашкой Lidia 0101, дополненный сумкой LS1928GP 0101 0038. Вариант 1789 ( Бежевый):",
+      "items": [
+        {
+          "name": "Serenella",
+          "code": "1547",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/531490407691f1568569555_18801954_02780610XX1.jpg",
+          "modelId": 314
+        },
+        {
+          "name": "Lidia",
+          "code": "0101",
+          "imageUrl": null
+        },
+        {
+          "name": "LS1928GP",
+          "code": "0101 0038",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/LS1928GP_10100180000.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Look 188",
+      "text": "гармоничный ансамбль с жакетом Salve A 1789 и принтованной рубашкой Lunotto 3418.",
+      "items": [
+        {
+          "name": "Salve A",
+          "code": "1789",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/vxWux3ofS5SFEVbTaGH9Cg_99445790696f42f07c9277_19680844_02820850XX1.jpg",
+          "modelId": 294
+        },
+        {
+          "name": "Lunotto",
+          "code": "3418",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/LUNOTTO_0.jpg",
+          "modelId": 128
+        }
+      ]
+    },
+    {
+      "title": "Vetrina 48/49",
+      "text": "предлагается сочетать с жакетом Salve 1789 и рубашками Liceali 3200 или Lucinda 0201 под защитой кашемирового кабана Segreteria 1751. Вариант 2527 ( Бордо):",
+      "items": [
+        {
+          "name": "Salve",
+          "code": "1789",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/vxWux3ofS5SFEVbTaGH9Cg_99445790696f42f07c9277_19680844_02820850XX1.jpg"
+        },
+        {
+          "name": "Liceali",
+          "code": "3200",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/S82WH97wQzu4sRcO5wWaUQ_2103315294696f4306d83529_32198325_02821400XX1.jpg"
+        },
+        {
+          "name": "Lucinda",
+          "code": "0201",
+          "imageUrl": null
+        },
+        {
+          "name": "Segreteria",
+          "code": "1751",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1177856364692424dbb18d31_39928106_02781600XX1.jpg",
+          "modelId": 479
+        }
+      ]
+    },
+    {
+      "title": "Look 217",
+      "text": "изысканный костюм с укороченным жакетом Serenella 2527.",
+      "items": [
+        {
+          "name": "Serenella",
+          "code": "2527",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/A3abRVUzTIC2qwZhUoAVDA_1978587936696f42f5250e37_36989507_02820970XX1.jpg",
+          "modelId": 314
+        }
+      ]
+    },
+    {
+      "title": "Vetrina 89 (Bambola 3)",
+      "text": "сложный зимний образ под пальто Scansione 0961 в сочетании с жакетом Serenella 2527 и пуловером Mossa 0970. Вариант 0101 ( Черный):",
+      "items": [
+        {
+          "name": "Scansione",
+          "code": "0961",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/WDu1Ie_2TLCfXS6sapBREA_929555794696f42f1be1be1_27317241_02820880XX1.jpg",
+          "modelId": 302
+        },
+        {
+          "name": "Serenella",
+          "code": "2527",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/A3abRVUzTIC2qwZhUoAVDA_1978587936696f42f5250e37_36989507_02820970XX1.jpg",
+          "modelId": 314
+        },
+        {
+          "name": "Mossa",
+          "code": "0970",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/7b9e70ac-1f12-46cb-beea-852f7a2328f9-removebg-preview.png"
+        }
+      ]
+    },
+    {
+      "title": "Vetrina 54 (Bambola 2)",
+      "text": "динамичный городской сет с укороченным кабаном Spillatrice 3470 0913 и трикотажным поло Mlacaria 0101.",
+      "items": [
+        {
+          "name": "Spillatrice",
+          "code": "3470 0913",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/0672eeac-225d-415a-a979-5986802b98c8-removebg-preview.png",
+          "modelId": 338
+        },
+        {
+          "name": "Mlacaria",
+          "code": "0101",
+          "imageUrl": null
+        }
+      ]
+    },
+    {
+      "title": "Vetrina 108 (Bambola 2)",
+      "text": "вечерний деловой образ с жакетом Meltina 2439 и белой рубашкой Loriana 0201.",
+      "items": [
+        {
+          "name": "Meltina",
+          "code": "2439",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/1197999749691f1574dbd530_20416087_02790380XX1.jpg",
+          "modelId": 439
+        },
+        {
+          "name": "Loriana",
+          "code": "0201",
+          "imageUrl": "https://cdn.jooraccess.com/img/uploads/accounts/598756/images/153074450692424d097e944_13615490_02781260XX1.jpg",
+          "modelId": 425
+        }
+      ]
+    }
+  ],
+  "advice": {
+    "en": [
+      "- Mastery of silhouette: Direct the client's attention to the pinces (darts). Explain that this element not only gives the trousers an on-trend 'masculine' character, but also ensures a perfect fit through the hips, concealing figure nuances and offering comfort while seated. - A textile investment: Highlight the advantages of the wool-blend fabric. It offers excellent shape retention: the crease on the Odini trousers will remain impeccably sharp throughout the working day, which is essential for maintaining a status-defining appearance. - Total Look versatility: Suggest the client acquire the trousers paired with the matching jacket (Salve or Serenella). This creates a powerful foundation for a modular wardrobe: the suit can be worn in its entirety for important meetings, or its pieces separated, pairing the trousers with Luisa Spagnoli knitwear for more relaxed occasions."
+    ],
+    "ru": [
+      "- Мастерство силуэта: Акцентируйте внимание клиента на защипах (pinces). Объясните, что этот элемент не только придает брюкам актуальный «мужской» характер, но и обеспечивает идеальную посадку в области бедер, скрывая нюансы фигуры и даря комфорт при сидении. - Текстильная инвестиция: Подчеркните преимущества смесовой шерсти. Она обладает высокой формоустойчивостью: стрелка на брюках Odini будет оставаться безупречно острой в течение всего рабочего дня, что критически важно для поддержания статусного вида. - Вариативность Total Look: Предложите клиенту приобрести брюки в паре с соответствующим жакетом (Salve или Serenella). Это создаст мощную базу для гардероба-конструктора: костюм можно носить целиком для важных встреч или разделять детали, сочетая брюки с трикотажем Luisa Spagnoli для более расслабленных выходов."
+    ]
+  },
+  "objections": {
+    "en": [
+      {
+        "q": "",
+        "a": "Objection Overcoming Strategy «The waist pleats Explain that in the Odini model, the pleats are might add \"open\" and soft. Paired with the high waist and unwanted volume» pressed crease, they, in fact, create the right geometry that slims and elongates the legs. «A wool blend Remind the client that adding modern fibers to seems less wool is the key to a piece's longevity. The prestigious» trousers wrinkle less and don't stretch out at the knees, preserving the LS brand's aesthetic for a long time. «The creases Point out the high quality of the tailoring. In require too much Luisa Spagnoli pieces, the crease is set during upkeep» production so that it's easy to maintain with minimal home care or steaming. «The classic cut Showcase Vetrina 54: paired with the Mlacaria looks too formal» 0101 polo and a short bomber jacket, the trousers become the foundation for a fashion-forward \"Sport-Luxe\" look. «The width of the Point out the regular cut (vestibilitÃ regolare). trouser legs seems This is the perfect middle ground between slim excessive» styles and oversized fits, ensuring the trousers stay relevant regardless of shifting trends."
+      }
+    ],
+    "ru": [
+      {
+        "q": "Защипы на талии",
+        "a": "что в модели Odini защипы."
+      },
+      {
+        "q": "Смесовая шерсть",
+        "a": "что добавление современных волокон к кажется менее шерсти города это залог долговечности изделия. Брюки престижной меньше мнутся и не вытягиваются на коленях, сохраняя эстетику бренда LS долгое время."
+      },
+      {
+        "q": "Стрелки требуют",
+        "a": "на высокое качество портновской обработки. слишком сложного В изделиях Luisa Spagnoli стрелка фиксируется на ухода этапе производства так, чтобы её было легко поддерживать при минимальном домашнем уходе или отпаривании."
+      },
+      {
+        "q": "Классический",
+        "a": "Vetrina 54: в сочетании с поло фасон выглядит Mlacaria 0101 и коротким кабаном брюки слишком превращаются в основу для остромодного образа в официально стиле."
+      },
+      {
+        "q": "Sport-",
+        "a": "Luxe ."
+      },
+      {
+        "q": "Ширина брючин",
+        "a": "на регулярный крой. Это золотая середина между узкими избыточной моделями и оверсайзом, которая гарантирует актуальность брюк вне зависимости от переменчивых трендов."
+      }
+    ]
+  }
+}

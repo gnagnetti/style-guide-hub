@@ -5,10 +5,12 @@ A mobile-first, bilingual (English default, Russian toggle) training app for ret
 ## What the app will do
 
 **Home screen**
+
 - Fixed header: LUISA SPAGNOLI in an elegant serif, subtitle "Training Material FW 2026/2027", and an EN | RU pill toggle on the right (choice remembered between visits).
 - A searchable dropdown listing all 273 models alphabetically, plus a SEARCH / ПОИСК button in satin gold.
 
 **Model sheet** (after choosing a model)
+
 1. Title "ANALYSIS: [Model]" / "АНАЛИЗ: [Model]", ID badge, and a hero image taken from the first colour variant that has one.
 2. Description in the selected language.
 3. Colour variants: 2-column grid on phones, 3 on larger screens, gold-edged thumbnails that open full-screen when tapped. Variants with no image get a champagne placeholder card showing colour name and code.
@@ -27,7 +29,6 @@ A mobile-first, bilingual (English default, Russian toggle) training app for ret
 - Sales advice split on `|`; objections split on `||` and on `[question] -> answer`.
 - 60 rows have no English objection text and 13 have none at all: English view falls back to the Russian text for those rather than showing an empty section.
 - Images load from an external server; a failed image falls back to the placeholder instead of a broken icon.
-
 
 ## Design
 

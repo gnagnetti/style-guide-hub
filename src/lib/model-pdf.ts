@@ -1,13 +1,25 @@
 import { jsPDF } from "jspdf";
 import fontUrl from "@/assets/fonts/DejaVuSans.ttf?url";
-import { heroImage, type Lang, type Model } from "./models";
+import { heroImage, getLookTitle, getLookText, type Lang, type Model } from "./models";
 
-const copy = {
+const copy: Record<
+  Lang,
+  {
+    material: string;
+    description: string;
+    colors: string;
+    styling: string;
+    advice: string;
+    objections: string;
+    noImage: string;
+    answer: string;
+  }
+> = {
   en: {
     material: "Training Material FW 2026/2027",
     description: "Description",
     colors: "Color Variants",
-    styling: "Styling & Combinations",
+    styling: "Styling / Combinations",
     advice: "Sales Advice",
     objections: "Objection Handling",
     noImage: "Image unavailable",
@@ -23,7 +35,77 @@ const copy = {
     noImage: "Изображение недоступно",
     answer: "Ответ",
   },
-} as const;
+  ar: {
+    material: "المواد التدريبية خريف وشتاء 2026/2027",
+    description: "الوصف",
+    colors: "خيارات الألوان",
+    styling: "التنسيق والمجموعات",
+    advice: "نصائح البيع",
+    objections: "التعامل مع الاعتراضات",
+    noImage: "الصورة غير متوفرة",
+    answer: "الإجابة",
+  },
+  hy: {
+    material: "Ուսումնական նյութեր Աշուն-Ձմեռ 2026/2027",
+    description: "Նկարագրություն",
+    colors: "Գույնի տարբերակներ",
+    styling: "Ոճավորում և համադրություններ",
+    advice: "Վաճառքի խորհուրդներ",
+    objections: "Առարկությունների հաղթահարում",
+    noImage: "Պատկերը հասանելի չէ",
+    answer: "Պատասխան",
+  },
+  ka: {
+    material: "სასწავლო მასალები შემოდგომა-ზამთარი 2026/2027",
+    description: "აღწერა",
+    colors: "ფერების ვარიანტები",
+    styling: "სტილი და კომბინაციები",
+    advice: "გაყიდვების რჩევები",
+    objections: "შედავებთან მუშაობა",
+    noImage: "სურათი მიუწვდომელია",
+    answer: "პასუხი",
+  },
+  uk: {
+    material: "Навчальні матеріали Осінь-Зима 2026/2027",
+    description: "Опис",
+    colors: "Варіанти кольорів",
+    styling: "Стилізація та комбінації",
+    advice: "Поради з продажу",
+    objections: "Робота із запереченнями",
+    noImage: "Зображення недоступне",
+    answer: "Відповідь",
+  },
+  lv: {
+    material: "Mācību materiāli Rudens-Ziema 2026/2027",
+    description: "Apraksts",
+    colors: "Krāsu varianti",
+    styling: "Stils un kombinācijas",
+    advice: "Pārdošanas padomi",
+    objections: "Iebildumu apstrāde",
+    noImage: "Attēls nav pieejams",
+    answer: "Atbilde",
+  },
+  lt: {
+    material: "Mokymo medžiaga Ruduo-Žiema 2026/2027",
+    description: "Aprašymas",
+    colors: "Spalvų variantai",
+    styling: "Stilius ir deriniai",
+    advice: "Pardavimo patarimai",
+    objections: "Prieštaravimų valdymas",
+    noImage: "Vaizdas nepasiekiamas",
+    answer: "Atsakymas",
+  },
+  pl: {
+    material: "Materiały szkoleniowe FW 2026/2027",
+    description: "Opis",
+    colors: "Warianty kolorystyczne",
+    styling: "Styling / Połączenia",
+    advice: "Wskazówki sprzedażowe",
+    objections: "Zarządzanie obiekcjami",
+    noImage: "Zdjęcie niedostępne",
+    answer: "Odpowiedź",
+  },
+};
 
 function cleanPdfText(value: string) {
   return value
@@ -120,7 +202,13 @@ export async function downloadModelPdf(model: Model, lang: Lang) {
     pdf.line(margin, y, margin + 18, y);
     y += 7;
   };
-  const imageBox = async (url: string | null, x: number, top: number, width: number, height: number) => {
+  const imageBox = async (
+    url: string | null,
+    x: number,
+    top: number,
+    width: number,
+    height: number,
+  ) => {
     const image = await loadImage(url);
     pdf.setDrawColor(220, 215, 205);
     pdf.rect(x, top, width, height);
@@ -133,7 +221,13 @@ export async function downloadModelPdf(model: Model, lang: Lang) {
     const ratio = Math.min((width - 2) / image.width, (height - 2) / image.height);
     const drawWidth = image.width * ratio;
     const drawHeight = image.height * ratio;
-    pdf.addImage(image.dataUrl, x + (width - drawWidth) / 2, top + (height - drawHeight) / 2, drawWidth, drawHeight);
+    pdf.addImage(
+      image.dataUrl,
+      x + (width - drawWidth) / 2,
+      top + (height - drawHeight) / 2,
+      drawWidth,
+      drawHeight,
+    );
   };
 
   pdf.setTextColor(34, 32, 29);
@@ -159,7 +253,7 @@ export async function downloadModelPdf(model: Model, lang: Lang) {
     y += 78;
   }
 
-  const description = model.description[lang] || model.description.en;
+  const description = model.description[lang] || model.description.en || model.description.ru || "";
   if (description) {
     heading(text.description);
     paragraph(description);
@@ -186,17 +280,27 @@ export async function downloadModelPdf(model: Model, lang: Lang) {
   if (model.looks.length) {
     heading(text.styling, 45);
     for (const look of model.looks) {
-      const lookLines = lines(look.text, contentWidth - 8, 8.5);
+      const lookTitle = getLookTitle(look, lang);
+      const lookText = getLookText(look, lang);
+      const lookLines = lines(lookText, contentWidth - 8, 8.5);
       const imageRows = look.items.length ? Math.ceil(look.items.length / 4) : 0;
       const estimated = 10 + lookLines.length * 3.6 + imageRows * 53;
       ensure(Math.min(estimated, pageHeight - 34));
       const top = y;
       pdf.setFillColor(249, 248, 245);
       pdf.setDrawColor(220, 215, 205);
-      pdf.roundedRect(margin, top, contentWidth, Math.min(estimated, pageHeight - top - 16), 1, 1, "FD");
+      pdf.roundedRect(
+        margin,
+        top,
+        contentWidth,
+        Math.min(estimated, pageHeight - top - 16),
+        1,
+        1,
+        "FD",
+      );
       y += 7;
-      if (look.title) paragraph(look.title, { indent: 4, size: 9, gap: 2 });
-      paragraph(look.text, { indent: 4, size: 8.5, gap: 4 });
+      if (lookTitle) paragraph(lookTitle, { indent: 4, size: 9, gap: 2 });
+      if (lookText) paragraph(lookText, { indent: 4, size: 8.5, gap: 4 });
       for (let i = 0; i < look.items.length; i += 4) {
         const group = look.items.slice(i, i + 4);
         ensure(51);
@@ -215,14 +319,24 @@ export async function downloadModelPdf(model: Model, lang: Lang) {
     }
   }
 
-  const advice = model.advice[lang].length ? model.advice[lang] : model.advice.en;
+  const advice =
+    (model.advice[lang]?.length
+      ? model.advice[lang]
+      : model.advice.en?.length
+        ? model.advice.en
+        : model.advice.ru) || [];
   if (advice.length) {
     const firstAdvice = advice[0] ?? "";
     heading(text.advice, lines(`1. ${firstAdvice}`, contentWidth, 9).length * 3.8 + 8);
     advice.forEach((item, index) => paragraph(`${index + 1}. ${item}`));
   }
 
-  const objections = model.objections[lang].length ? model.objections[lang] : model.objections.ru;
+  const objections =
+    (model.objections[lang]?.length
+      ? model.objections[lang]
+      : model.objections.en?.length
+        ? model.objections.en
+        : model.objections.ru) || [];
   if (objections.length) {
     const firstObjection = objections[0];
     const firstObjectionHeight = firstObjection
@@ -243,7 +357,9 @@ export async function downloadModelPdf(model: Model, lang: Lang) {
     pdf.setFont("DejaVu", "normal");
     pdf.setFontSize(7);
     pdf.setTextColor(130, 126, 118);
-    pdf.text(`${model.name} · ${page}/${totalPages}`, pageWidth - margin, pageHeight - 8, { align: "right" });
+    pdf.text(`${model.name} · ${page}/${totalPages}`, pageWidth - margin, pageHeight - 8, {
+      align: "right",
+    });
   }
   pdf.save(`${model.name.replace(/[^a-z0-9а-яё]+/gi, "-").replace(/^-|-$/g, "")}-${lang}.pdf`);
 }

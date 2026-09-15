@@ -4,13 +4,22 @@
 import re
 
 # Russian strategy words that introduce responses to objections
-STRATEGY_WORDS = {
-    "Поясните",      # Clarify
-    "Укажите",       # Indicate / Point out
-    "Предложите",    # Suggest / Offer
-    "Продемонстрируйте",  # Demonstrate / Show
-    "Рекомендуйте",  # Recommend
-}
+STRATEGY_WORDS = [
+    "Поясните",            # Clarify
+    "Укажите",             # Indicate / Point out
+    "Предложите",          # Suggest / Offer
+    "Продемонстрируйте",   # Demonstrate / Show
+    "Рекомендуйте",        # Recommend
+    "Объясните",           # Explain
+    "Обратите внимание",   # Pay attention
+    "Покажите",            # Show
+    "Подчеркните",         # Emphasize
+    "Напомните",           # Remind
+    "Заверьте",            # Assure
+    "Сделайте акцент",     # Accentuate
+    "Расскажите",          # Tell
+    "Акцентируйте",        # Accentuate
+]
 
 # Markdown image syntax: ![...](url) or ![](url)
 MARKDOWN_IMAGE = re.compile(r"!\[([^\]]*)\]\([^)]*\)")
@@ -29,7 +38,7 @@ def clean(text: str) -> str:
     # Remove any remaining Markdown image syntax
     t = MARKDOWN_IMAGE.sub("", t)
     t = re.sub(r"\(\s*(nan|Данные отсутствуют[^)]*|URL non disponibile)\s*\)", "", t, flags=re.I)
-    t = re.sub(r"\(\s*\)", "", t)
+    t = re.sub(r"\([^)]*\)", "", t)
     t = re.sub(r"\s+([,.;:!?])", r"\1", t)
     t = re.sub(r"([,.;:])\s*([,.;:])+", r"\1", t)
     t = re.sub(r"\s{2,}", " ", t)
@@ -39,89 +48,91 @@ def clean(text: str) -> str:
 def parse_objections(raw):
     """
     Parse objections in multiple formats:
-    1. Concatenated Russian guillemet format: «Q1» StrategyWord1 A1«Q2» StrategyWord2 A2...
+    1. Interleaved Russian guillemet format where strategy word sits inside «...»
+       e.g., «Question StrategyWord AnswerPart1» AnswerPart2
     2. Bracket format: [Q] -> A || [Q] -> A
     3. Fallback: Q || A (pipe-separated)
-    
-    For concatenated format, responses end at:
-    - Next « (start of next question)
-    - Capital Cyrillic letter (А-Я) at word boundary
     """
-    if not isinstance(raw, str):
+    if not isinstance(raw, str) or not raw.strip():
         return []
-    
+
     out = []
-    
-    # Try concatenated Russian guillemet format first
-    # Pattern: «question» followed by strategy word, then answer text
-    if "«" in raw:
-        # Split by « to find question blocks
-        parts = raw.split("«")
-        
-        for i, part in enumerate(parts):
-            if not part.strip():
+
+    # Check if this is the Russian 'Возражение Стратегия' / guillemet format
+    is_strat_format = "Возражение" in raw or any(sw in raw for sw in STRATEGY_WORDS)
+
+    if "«" in raw and is_strat_format:
+        cleaned = clean(raw)
+        cleaned = re.sub(r"^Возражение\s+Стратегия\s+[^\s«]+\s*", "", cleaned)
+        cleaned = cleaned.replace("---", "города")
+
+        parts = cleaned.split("«")
+        for part in parts:
+            part = part.strip()
+            if not part:
                 continue
-            
-            # Find the end of the question (closing »)
-            q_end = part.find("»")
-            if q_end == -1:
+
+            # Find strategy word within this part
+            strat_found = None
+            strat_idx = -1
+            for sw in STRATEGY_WORDS:
+                m = re.search(r"\b" + re.escape(sw) + r"\b", part)
+                if m:
+                    if strat_idx == -1 or m.start() < strat_idx:
+                        strat_idx = m.start()
+                        strat_found = (m.start(), m.end(), sw)
+
+            if not strat_found:
                 continue
-            
-            question = part[:q_end].strip()
-            remainder = part[q_end + 1:].strip()
-            
-            if not remainder:
-                continue
-            
-            # Find strategy word in the remainder
-            strategy_match = None
-            for strategy in STRATEGY_WORDS:
-                match = re.search(r"\b" + re.escape(strategy) + r"\b", remainder, re.IGNORECASE)
-                if match:
-                    strategy_match = match
-                    break
-            
-            if not strategy_match:
-                continue
-            
-            # Answer starts after the strategy word
-            answer_start = strategy_match.end()
-            answer_text = remainder[answer_start:].strip()
-            
-            # Answer ends at:
-            # 1. Next « (if more questions follow), or
-            # 2. Capital Cyrillic letter (А-Я) followed by space/word boundary
-            # 3. End of string
-            next_q_pos = answer_text.find("«")
-            
-            # Look for capital Cyrillic at word boundary
-            capital_cyrillic_match = re.search(r"(?:^|\s)([А-Я])", answer_text)
-            capital_pos = capital_cyrillic_match.start() + 1 if capital_cyrillic_match else len(answer_text)
-            
-            # Use whichever comes first
-            if next_q_pos != -1:
-                answer_end = min(next_q_pos, capital_pos) if capital_pos < len(answer_text) else next_q_pos
+
+            q = part[:strat_found[0]].strip(" \t\n\r,;«»")
+            rest = part[strat_found[1]:].strip()
+
+            if "»" in rest:
+                a_part1, a_part2 = rest.split("»", 1)
             else:
-                answer_end = capital_pos
-            
-            answer = clean(answer_text[:answer_end])
-            if question or answer:
-                out.append({"q": clean(question), "a": answer})
-        
+                a_part1, a_part2 = rest, ""
+
+            a = (a_part1.strip() + " " + a_part2.strip()).strip(" \t\n\r,;«»")
+            a = re.sub(r"^[,\s]+", "", a)
+            a = re.sub(r"\s{2,}", " ", a)
+
+            if q and a:
+                if not a.endswith("."):
+                    a += "."
+                out.append({"q": q, "a": a})
+
         if out:
             return out
-    
+
     # Fall back to bracket format: [Q] -> A
-    for block in re.split(r"\|\|", raw):
-        block = block.strip().strip(",")
-        if not block:
-            continue
-        m = re.match(r"^\s*\[(.+?)\]\s*->\s*(.*)$", block, flags=re.S)
-        if m:
-            out.append({"q": clean(m.group(1)), "a": clean(m.group(2))})
-        else:
-            out.append({"q": "", "a": clean(block)})
-    
+    if "[" in raw and "]" in raw:
+        for block in re.split(r"\|\|", raw):
+            block = block.strip().strip(",")
+            if not block:
+                continue
+            m = re.match(r"^\s*\[(.+?)\]\s*->\s*(.*)$", block, flags=re.S)
+            if m:
+                out.append({"q": clean(m.group(1)), "a": clean(m.group(2))})
+            else:
+                out.append({"q": "", "a": clean(block)})
+
+        if out:
+            return out
+
+    # Generic pipe delimiter fallback
+    if "||" in raw:
+        for block in re.split(r"\|\|", raw):
+            block = block.strip()
+            if block:
+                out.append({"q": "", "a": clean(block)})
+        if out:
+            return out
+
+    # Last fallback: single block
+    if raw.strip():
+        out.append({"q": "", "a": clean(raw)})
+
     return out
 
 

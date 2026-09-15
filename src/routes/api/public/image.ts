@@ -24,7 +24,8 @@ export const Route = createFileRoute("/api/public/image")({
         if (!response.ok) return new Response("Image unavailable", { status: 502 });
 
         const contentType = response.headers.get("content-type") ?? "";
-        if (!contentType.startsWith("image/")) return new Response("Invalid image response", { status: 502 });
+        if (!contentType.startsWith("image/"))
+          return new Response("Invalid image response", { status: 502 });
 
         return new Response(response.body, {
           headers: {

@@ -158,23 +158,23 @@ Crea una Web App mobile-first elegante, performante e bilingue (Inglese come lin
 
 **Titolo Applicazione**:
 
-* **EN**: `"Training Material Fall Winter 2026/2027"`
+- **EN**: `"Training Material Fall Winter 2026/2027"`
 
-* **RU**: `"Учебные материалы Осень-Зима 2026/2027"`
+- **RU**: `"Учебные материалы Осень-Зима 2026/2027"`
 
 ---
 
 ## 1. ARCHITETTURA TECNICA & STACK
 
-* **Framework**: React (Vite) + TypeScript
+- **Framework**: React (Vite) + TypeScript
 
-* **Stile**: Tailwind CSS (mobile-first, palette lusso: panna, oro satinato/champagne, nero grafite, bordeaux)
+- **Stile**: Tailwind CSS (mobile-first, palette lusso: panna, oro satinato/champagne, nero grafite, bordeaux)
 
-* **Componenti UI**: Lucide React Icons, Shadcn UI (`Select` / `Combobox`, `Card`, `Accordion`, `Tabs`, `Badge`, `Button`, `Dialog` / `Lightbox`).
+- **Componenti UI**: Lucide React Icons, Shadcn UI (`Select` / `Combobox`, `Card`, `Accordion`, `Tabs`, `Badge`, `Button`, `Dialog` / `Lightbox`).
 
-* **Stato lingua**: React Context (`en` predefinito, `ru` alternativo) con persistenza in `localStorage`.
+- **Stato lingua**: React Context (`en` predefinito, `ru` alternativo) con persistenza in `localStorage`.
 
-* **Data Source**: Import diretto del file `risultato_finale.json` (convertito dal dataset Excel con i 273 modelli).
+- **Data Source**: Import diretto del file `risultato_finale.json` (convertito dal dataset Excel con i 273 modelli).
 
 ---
 
@@ -190,61 +190,57 @@ Crea una funzione helper `parseStyling(rawText: string)` che:
 
 2. **Estrazione Capi Citati & URL**:
 
-* Analizza ciascun outfit per individuare **tutti i modelli citati** e i rispettivi URL di immagine associate: `NomeModello CodiceColore (http://...)`.
+- Analizza ciascun outfit per individuare **tutti i modelli citati** e i rispettivi URL di immagine associate: `NomeModello CodiceColore (http://...)`.
 
-* Struttura ciascun capo estratto come oggetto:
+- Struttura ciascun capo estratto come oggetto:
 
 ```typescript
-
 interface OutfitItem {
+  name: string; // es. "Fumaiolo", "Niassesi", "Uragano A"
 
-  name: string;        // es. "Fumaiolo", "Niassesi", "Uragano A"
+  colorCode?: string; // es. "3417", "2449 0002"
 
-  colorCode?: string;  // es. "3417", "2449 0002"
-
-  imageUrl: string;    // URL immagine funzionante dell'articolo citato
-
+  imageUrl: string; // URL immagine funzionante dell'articolo citato
 }
-
 ```
 
 3. **Pulizia Testo Visivo**:
 
-* Rimuove dal testo dell'outfit qualsiasi URL grezzo (es. `[https://cdn.jooraccess.com/](https://cdn.jooraccess.com/)...`), stringhe `(nan)`, doppie parentesi vuote `()` e spazi in eccesso.
+- Rimuove dal testo dell'outfit qualsiasi URL grezzo (es. `[https://cdn.jooraccess.com/](https://cdn.jooraccess.com/)...`), stringhe `(nan)`, doppie parentesi vuote `()` e spazi in eccesso.
 
-* Il testo finale mostrato nella Card Outfit deve risultare **100% pulito e scorrevole**, privo di link testuali visibili.
+- Il testo finale mostrato nella Card Outfit deve risultare **100% pulito e scorrevole**, privo di link testuali visibili.
 
 ### B. Gestione Varianti Colore (`parseColorVariants`)
 
 Formato nel dataset: `Nome Colore (Codice): URL | Nome Colore 2 (Codice): URL`.
 
-* Parsing in array di oggetti: `{ name: string, code: string, imageUrl: string }`.
+- Parsing in array di oggetti: `{ name: string, code: string, imageUrl: string }`.
 
-* Se l'URL è `"URL non disponibile"`, nullo o assente:
+- Se l'URL è `"URL non disponibile"`, nullo o assente:
 
-* Mostra una card di fallback elegante con sfondo champagne tenue, il nome del colore, il codice e un'icona tematica (es. `Palette` o `Shirt`).
+- Mostra una card di fallback elegante con sfondo champagne tenue, il nome del colore, il codice e un'icona tematica (es. `Palette` o `Shirt`).
 
-* **Funzione Lightbox**: Tap/Click sulla miniatura per aprire il dettaglio immagine a schermo intero.
+- **Funzione Lightbox**: Tap/Click sulla miniatura per aprire il dettaglio immagine a schermo intero.
 
 ### C. Consigli di Vendita (3 Punti Tattici)
 
-* Separati dal carattere `|`.
+- Separati dal carattere `|`.
 
-* Mostrati sia in **EN** (`Consigli di Vendita Eng`) che in **RU** (`Consigli di Vendita`) a seconda della lingua attiva.
+- Mostrati sia in **EN** (`Consigli di Vendita Eng`) che in **RU** (`Consigli di Vendita`) a seconda della lingua attiva.
 
-* Visualizzati come 3 Card ben formattate con numerazione `01`, `02`, `03` e iconografia luxury (`Sparkles`, `Award`, `TrendingUp`).
+- Visualizzati come 3 Card ben formattate con numerazione `01`, `02`, `03` e iconografia luxury (`Sparkles`, `Award`, `TrendingUp`).
 
 ### D. Gestione Obiezioni (Anti-Truncate & Layout Dinamico)
 
-* Separati dal delimitatore `||`.
+- Separati dal delimitatore `||`.
 
-* Pattern di parsing: `[Obiezione cliente] -> Risposta sales assistant`.
+- Pattern di parsing: `[Obiezione cliente] -> Risposta sales assistant`.
 
-* **REQUISITO LAYOUT**:
+- **REQUISITO LAYOUT**:
 
-* `whitespace-normal`, `break-words`, `h-auto`, `overflow-visible`.
+- `whitespace-normal`, `break-words`, `h-auto`, `overflow-visible`.
 
-* Layout ad **Accordion** o **Card estendibili dinamicamente** per accogliere testi lunghi sia in Russo che in Inglese senza alcun taglio di testo.
+- Layout ad **Accordion** o **Card estendibili dinamicamente** per accogliere testi lunghi sia in Russo che in Inglese senza alcun taglio di testo.
 
 ---
 
@@ -252,17 +248,17 @@ Formato nel dataset: `Nome Colore (Codice): URL | Nome Colore 2 (Codice): URL`.
 
 ### Header Fisso Superiore
 
-* Brand: **LUISA SPAGNOLI** (*Cormorant Garamond* / *Playfair Display*, maiuscolo, spaziato).
+- Brand: **LUISA SPAGNOLI** (_Cormorant Garamond_ / _Playfair Display_, maiuscolo, spaziato).
 
-* Sottotitolo: *Training Material FW 2026/2027*.
+- Sottotitolo: _Training Material FW 2026/2027_.
 
-* Switcher Lingua in alto a destra: Toggle Pill **[ EN | RU ]**.
+- Switcher Lingua in alto a destra: Toggle Pill **[ EN | RU ]**.
 
 ### Barra di Selezione & Ricerca Modelli
 
-* `Combobox` / `Select` ricercabile contenente la lista in ordine alfabetico di tutti i **273 modelli** presenti nel file (es. *Cadino, Capire, Caprese B, Caserta, Cassina, Cavina...*).
+- `Combobox` / `Select` ricercabile contenente la lista in ordine alfabetico di tutti i **273 modelli** presenti nel file (es. _Cadino, Capire, Caprese B, Caserta, Cassina, Cavina..._).
 
-* Pulsante di Azione: **"SEARCH"** (EN) / **"ПОИСК"** (RU) con styling oro satinato `#A37D45` e testo scuro/bianco.
+- Pulsante di Azione: **"SEARCH"** (EN) / **"ПОИСК"** (RU) con styling oro satinato `#A37D45` e testo scuro/bianco.
 
 ---
 
@@ -270,69 +266,69 @@ Formato nel dataset: `Nome Colore (Codice): URL | Nome Colore 2 (Codice): URL`.
 
 #### 1. Hero & Intestazione Modello
 
-* Titolo dinamico: **ANALYSIS: [Nome Modello]** (EN) / **АНАЛИЗ: [Nome Modello]** (RU).
+- Titolo dinamico: **ANALYSIS: [Nome Modello]** (EN) / **АНАЛИЗ: [Nome Modello]** (RU).
 
-* Badge ID e Categoria (es. *ID #2 | Maglieria / Capispalla*).
+- Badge ID e Categoria (es. _ID #2 | Maglieria / Capispalla_).
 
-* Immagine Hero principale del modello (estratta dalla prima variante colore valida).
+- Immagine Hero principale del modello (estratta dalla prima variante colore valida).
 
 #### 2. DESCRIPTION / ОПИСАНИЕ
 
-* Testo completo della descrizione (in base alla lingua selezionata: `Descrizione Eng` o `Descrizione`).
+- Testo completo della descrizione (in base alla lingua selezionata: `Descrizione Eng` o `Descrizione`).
 
-* Tipografia moderna e leggibile (*Inter* / *Montserrat*), interlinea comoda (`leading-relaxed`).
+- Tipografia moderna e leggibile (_Inter_ / _Montserrat_), interlinea comoda (`leading-relaxed`).
 
 #### 3. COLOR VARIANTS / ВАРИАНТЫ ЦВЕТА
 
-* Griglia a 2 colonne su mobile (3 su tablet/desktop).
+- Griglia a 2 colonne su mobile (3 su tablet/desktop).
 
-* Miniatura dell'immagine variante con bordo dorato sottile + funzione tap-to-zoom (Modal Lightbox).
+- Miniatura dell'immagine variante con bordo dorato sottile + funzione tap-to-zoom (Modal Lightbox).
 
-* Nome del colore e codice univoco (es. *Bordeaux (2452)*).
+- Nome del colore e codice univoco (es. _Bordeaux (2452)_).
 
 #### 4. STYLING & COMBINATIONS / СТАЙЛИНГ И СОЧЕТАНИЯ
 
-* Per ogni Total Look / Vetrina parsed:
+- Per ogni Total Look / Vetrina parsed:
 
-* **Box Testo Outfit**: Testo completamente pulito da qualsiasi URL o parentesi residua.
+- **Box Testo Outfit**: Testo completamente pulito da qualsiasi URL o parentesi residua.
 
-* **Gallery Capi Abbinati (Carousel/Grid)**: Sotto al testo dell'outfit, mostra le card visive di tutti i singoli capi citati (con immagine preview, nome del modello e codice colore). Facendo tap sulla card di un capo abbinato, l'app permette di passare direttamente alla scheda di quel modello.
+- **Gallery Capi Abbinati (Carousel/Grid)**: Sotto al testo dell'outfit, mostra le card visive di tutti i singoli capi citati (con immagine preview, nome del modello e codice colore). Facendo tap sulla card di un capo abbinato, l'app permette di passare direttamente alla scheda di quel modello.
 
 #### 5. SALES ADVICE / СОВЕТЫ ПО ПРОДАЖАМ
 
-* 3 Card numerate (`01`, `02`, `03`) con finiture in oro satinato `#A37D45`, che mettono in risalto i punti di forza del tessuto, la vestibilità e l'esperienza d'uso.
+- 3 Card numerate (`01`, `02`, `03`) con finiture in oro satinato `#A37D45`, che mettono in risalto i punti di forza del tessuto, la vestibilità e l'esperienza d'uso.
 
 #### 6. OBJECTION HANDLING / УПРАВЛЕНИЕ ВОЗРАЖЕНИЯМИ
 
-* Card espandibili (Accordion) o verticali complete per le 5 obiezioni tipiche:
+- Card espandibili (Accordion) o verticali complete per le 5 obiezioni tipiche:
 
-* **Box Domanda/Obiezione**: Sfondo grigio chiaro/champagne, icona `HelpCircle`, testo in grassetto (`font-semibold text-stone-900`).
+- **Box Domanda/Obiezione**: Sfondo grigio chiaro/champagne, icona `HelpCircle`, testo in grassetto (`font-semibold text-stone-900`).
 
-* **Box Risposta Sales Assistant**: Sfondo panna, bordo sinistro color oro (`border-l-4 border-[#A37D45]`), icona `CheckCircle2`, testo fluido ed esaustivo.
+- **Box Risposta Sales Assistant**: Sfondo panna, bordo sinistro color oro (`border-l-4 border-[#A37D45]`), icona `CheckCircle2`, testo fluido ed esaustivo.
 
 ---
 
 ## 4. DESIGN SYSTEM & REGOLE CSS
 
-* **Colori Primari**:
+- **Colori Primari**:
 
-* Background: `#FAF8F5` (Panna/Alabastro)
+- Background: `#FAF8F5` (Panna/Alabastro)
 
-* Card & Container: `#FFFFFF` con bordo `#E7E2DA` e ombra leggera `shadow-sm`
+- Card & Container: `#FFFFFF` con bordo `#E7E2DA` e ombra leggera `shadow-sm`
 
-* Testo Principale: `#1C1917` (Stone 900)
+- Testo Principale: `#1C1917` (Stone 900)
 
-* Dettagli & Accenti: `#A37D45` (Oro Satinato Luisa Spagnoli)
+- Dettagli & Accenti: `#A37D45` (Oro Satinato Luisa Spagnoli)
 
-* Sfondo Card Obiezioni: `#F4F0EA` (Champagne tenue)
+- Sfondo Card Obiezioni: `#F4F0EA` (Champagne tenue)
 
-* **Tipografia**:
+- **Tipografia**:
 
-* Headings/Titoli: *Playfair Display* / *Cormorant Garamond* (Serif lusso)
+- Headings/Titoli: _Playfair Display_ / _Cormorant Garamond_ (Serif lusso)
 
-* Body/Descrizioni: *Inter* / *Montserrat* (Sans-serif pulita per mobile)
+- Body/Descrizioni: _Inter_ / _Montserrat_ (Sans-serif pulita per mobile)
 
-* **Layout Spacing**: `px-4 py-6` per schermi mobile, `max-w-md` o `max-w-2xl` centrato per schermi più ampi.
+- **Layout Spacing**: `px-4 py-6` per schermi mobile, `max-w-md` o `max-w-2xl` centrato per schermi più ampi.
 
 This project was built with [Lovable](https://lovable.dev).
 
