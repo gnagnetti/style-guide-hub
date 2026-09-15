@@ -25,6 +25,14 @@ const copy = {
   },
 } as const;
 
+function cleanPdfText(value: string) {
+  return value
+    .replace(/!\[[^\]]*]\([^)]*\)\s*\{[^}]*\}/g, "")
+    .replace(/!\[[^\]]*]\([^)]*\)/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function arrayBufferToBase64(buffer: ArrayBuffer) {
   const bytes = new Uint8Array(buffer);
   let binary = "";
@@ -88,7 +96,7 @@ export async function downloadModelPdf(model: Model, lang: Lang) {
   };
   const lines = (value: string, width = contentWidth, size = 9) => {
     pdf.setFontSize(size);
-    return pdf.splitTextToSize(value, width) as string[];
+    return pdf.splitTextToSize(cleanPdfText(value), width) as string[];
   };
   const paragraph = (value: string, options?: { indent?: number; size?: number; gap?: number }) => {
     const indent = options?.indent ?? 0;
@@ -209,13 +217,13 @@ export async function downloadModelPdf(model: Model, lang: Lang) {
 
   const advice = model.advice[lang].length ? model.advice[lang] : model.advice.en;
   if (advice.length) {
-    heading(text.advice);
+    heading(text.advice, 24);
     advice.forEach((item, index) => paragraph(`${index + 1}. ${item}`));
   }
 
   const objections = model.objections[lang].length ? model.objections[lang] : model.objections.ru;
   if (objections.length) {
-    heading(text.objections);
+    heading(text.objections, 30);
     objections.forEach((item, index) => {
       paragraph(`${index + 1}. ${item.q}`, { size: 9, gap: 2 });
       paragraph(`${text.answer}: ${item.a}`, { indent: 4, size: 8.5, gap: 6 });
