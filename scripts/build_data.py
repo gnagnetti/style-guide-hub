@@ -213,10 +213,38 @@ def split_pipe(raw):
     return [clean(p) for p in raw.split("|") if p.strip()]
 
 
+# Russian strategy words that introduce responses to objections
+STRATEGY_WORDS = {
+    "Поясните",      # Clarify
+    "Укажите",       # Indicate / Point out
+    "Предложите",    # Suggest / Offer
+    "Продемонстрируйте",  # Demonstrate / Show
+    "Рекомендуйте",  # Recommend
+}
+
+# Regex to match Russian guillemet format: «question» followed by strategy word and answer
+RUSSIAN_OBJECTION_RE = re.compile(
+    r"«([^«»]+)»\s+(" + "|".join(re.escape(w) for w in STRATEGY_WORDS) + r")[,\s]+(.+?)(?=«|$)",
+    re.DOTALL | re.IGNORECASE
+)
+
+
 def parse_objections(raw):
     if not isinstance(raw, str):
         return []
     out = []
+    
+    # First try to match Russian guillemet + strategy word format
+    russian_matches = list(RUSSIAN_OBJECTION_RE.finditer(raw))
+    if russian_matches:
+        for m in russian_matches:
+            q = clean(m.group(1))
+            a = clean(m.group(3))
+            if q or a:
+                out.append({"q": q, "a": a})
+        return out
+    
+    # Fall back to the original [question] -> answer format
     for block in re.split(r"\|\|", raw):
         block = block.strip().strip(",")
         if not block:
