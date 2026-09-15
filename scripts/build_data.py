@@ -222,29 +222,83 @@ STRATEGY_WORDS = {
     "Рекомендуйте",  # Recommend
 }
 
-# Regex to match Russian guillemet format: «question» followed by strategy word and answer
-RUSSIAN_OBJECTION_RE = re.compile(
-    r"«([^«»]+)»\s+(" + "|".join(re.escape(w) for w in STRATEGY_WORDS) + r")[,\s]+(.+?)(?=«|$)",
-    re.DOTALL | re.IGNORECASE
-)
-
 
 def parse_objections(raw):
+    """
+    Parse objections in multiple formats:
+    1. Concatenated Russian guillemet format: «Q1» StrategyWord1 A1«Q2» StrategyWord2 A2...
+    2. Bracket format: [Q] -> A || [Q] -> A
+    3. Fallback: Q || A (pipe-separated)
+    
+    For concatenated format, responses end at:
+    - Next « (start of next question)
+    - Capital Cyrillic letter (А-Я) at word boundary
+    """
     if not isinstance(raw, str):
         return []
+    
     out = []
     
-    # First try to match Russian guillemet + strategy word format
-    russian_matches = list(RUSSIAN_OBJECTION_RE.finditer(raw))
-    if russian_matches:
-        for m in russian_matches:
-            q = clean(m.group(1))
-            a = clean(m.group(3))
-            if q or a:
-                out.append({"q": q, "a": a})
-        return out
+    # Try concatenated Russian guillemet format first
+    # Pattern: «question» followed by strategy word, then answer text
+    if "«" in raw:
+        # Split by « to find question blocks
+        parts = raw.split("«")
+        
+        for i, part in enumerate(parts):
+            if not part.strip():
+                continue
+            
+            # Find the end of the question (closing »)
+            q_end = part.find("»")
+            if q_end == -1:
+                continue
+            
+            question = part[:q_end].strip()
+            remainder = part[q_end + 1:].strip()
+            
+            if not remainder:
+                continue
+            
+            # Find strategy word in the remainder
+            strategy_match = None
+            for strategy in STRATEGY_WORDS:
+                match = re.search(r"\b" + re.escape(strategy) + r"\b", remainder, re.IGNORECASE)
+                if match:
+                    strategy_match = match
+                    break
+            
+            if not strategy_match:
+                continue
+            
+            # Answer starts after the strategy word
+            answer_start = strategy_match.end()
+            answer_text = remainder[answer_start:].strip()
+            
+            # Answer ends at:
+            # 1. Next « (if more questions follow), or
+            # 2. Capital Cyrillic letter (А-Я) followed by space/word boundary
+            # 3. End of string
+            next_q_pos = answer_text.find("«")
+            
+            # Look for capital Cyrillic at word boundary
+            capital_cyrillic_match = re.search(r"(?:^|\s)([А-Я])", answer_text)
+            capital_pos = capital_cyrillic_match.start() + 1 if capital_cyrillic_match else len(answer_text)
+            
+            # Use whichever comes first
+            if next_q_pos != -1:
+                answer_end = min(next_q_pos, capital_pos) if capital_pos < len(answer_text) else next_q_pos
+            else:
+                answer_end = capital_pos
+            
+            answer = clean(answer_text[:answer_end])
+            if question or answer:
+                out.append({"q": clean(question), "a": answer})
+        
+        if out:
+            return out
     
-    # Fall back to the original [question] -> answer format
+    # Fall back to bracket format: [Q] -> A
     for block in re.split(r"\|\|", raw):
         block = block.strip().strip(",")
         if not block:
@@ -254,6 +308,7 @@ def parse_objections(raw):
             out.append({"q": clean(m.group(1)), "a": clean(m.group(2))})
         else:
             out.append({"q": "", "a": clean(block)})
+    
     return out
 
 
