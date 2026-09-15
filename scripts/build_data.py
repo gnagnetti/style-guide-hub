@@ -8,6 +8,7 @@ import json
 import re
 import sys
 from collections import defaultdict
+from urllib.parse import quote
 
 import pandas as pd
 
@@ -41,7 +42,7 @@ by_name = defaultdict(list)
 for _, row in url_df.iterrows():
     raw = str(row["ModelloColore"])
     url = row["Style Image URL_1"]
-    url = None if (pd.isna(url) or not str(url).startswith("http")) else str(url).strip()
+    url = None if (pd.isna(url) or not str(url).startswith("http")) else enc(str(url).strip())
     m = re.match(r"^(.*?)\s*\(([\d\s]+)\)\s*$", raw)
     if not m:
         continue
@@ -96,6 +97,9 @@ ITEM_RE = re.compile(
 )
 
 
+SKIP_NAMES = {"vetrina", "look", "total look", "total", "outfit"}
+
+
 def parse_looks(raw, self_name):
     if not isinstance(raw, str) or not raw.strip():
         return []
@@ -112,6 +116,8 @@ def parse_looks(raw, self_name):
         body_clean = clean(body)
         for m in ITEM_RE.finditer(body_clean):
             name = re.sub(r"\s+", " ", m.group(1)).strip()
+            if norm(name) in SKIP_NAMES:
+                continue
             codes = re.findall(r"\d+", m.group(2))
             key = f"{norm(name)}|{codes_key(codes)}"
             if key in seen:
@@ -132,8 +138,7 @@ def parse_colors(raw, model_name):
         if not m:
             continue
         name, codes, url = m.group(1).strip(), re.findall(r"\d+", m.group(2)), m.group(3).strip()
-        if not url.startswith("http"):
-            url = None
+        url = enc(url) if url.startswith("http") else None
         resolved = lookup(model_name, codes) or url
         out.append({"name": name, "code": " ".join(codes), "imageUrl": resolved})
     return out
