@@ -94,7 +94,8 @@ def parse_looks(raw, self_name):
         if head and re.search(r"(Total Look|Vetrina|Стилистическое|Look)", head.group(1), re.I):
             title, body = head.group(1).strip(), head.group(2)
         items, seen = [], set()
-        for m in ITEM_RE.finditer(body):
+        body_clean = clean(body)
+        for m in ITEM_RE.finditer(body_clean):
             name = re.sub(r"\s+", " ", m.group(1)).strip()
             codes = re.findall(r"\d+", m.group(2))
             key = f"{norm(name)}|{codes_key(codes)}"
@@ -102,7 +103,8 @@ def parse_looks(raw, self_name):
                 continue
             seen.add(key)
             items.append({"name": name, "code": " ".join(codes), "imageUrl": lookup(name, codes)})
-        looks.append({"title": title, "text": clean(body), "items": items})
+        looks.append({"title": title, "text": body_clean, "items": items})
+
     return looks
 
 
