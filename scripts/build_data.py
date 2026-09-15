@@ -100,11 +100,50 @@ ITEM_RE = re.compile(
 SKIP_NAMES = {"vetrina", "look", "total look", "total", "outfit"}
 
 
+VARIANT_RE = re.compile(r"\bВариант\s+[\d\s]+\s*:", re.I)
+COMBINATION_RE = re.compile(
+    r"(?:В\s+lookbook(?:\s*\([^)]*\))?|На\s+витрин(?:е|ах)(?:\s*\([^)]*\))?"
+    r"|Lookbook(?:\s*\([^)]*\))?|Vetrina(?:\s*\([^)]*\))?"
+    r"|Визуальный\s+мерчандайзинг(?:\s*\([^)]*\))?)\s*:",
+    re.I,
+)
+
+
+def split_look_segments(raw):
+    """Split prose into one block per explicitly cited look/window display."""
+    cleaned = clean(raw)
+    parts = [p.strip() for p in re.split(r"\s*\|\s*", cleaned) if p.strip()]
+    out = []
+
+    for part in parts:
+        combinations = list(COMBINATION_RE.finditer(part))
+        if len(combinations) < 2:
+            out.append(part)
+            continue
+
+        variants = list(VARIANT_RE.finditer(part))
+        intro = part[: combinations[0].start()].strip(" -,")
+        for index, marker in enumerate(combinations):
+            next_start = combinations[index + 1].start() if index + 1 < len(combinations) else len(part)
+            next_variant = next((v for v in variants if marker.end() <= v.start() < next_start), None)
+            end = next_variant.start() if next_variant else next_start
+
+            active_variant = next((v for v in reversed(variants) if v.start() < marker.start()), None)
+            variant_text = active_variant.group(0).strip() if active_variant else ""
+            body = part[marker.start():end].strip(" -,")
+            prefix = " ".join(x for x in (intro if index == 0 else "", variant_text) if x)
+            segment = f"{prefix} {body}".strip()
+            if segment:
+                out.append(segment)
+
+    return out
+
+
 def parse_looks(raw, self_name):
     if not isinstance(raw, str) or not raw.strip():
         return []
     looks = []
-    for seg in raw.split(" | "):
+    for seg in split_look_segments(raw):
         seg = seg.strip()
         if not seg:
             continue
