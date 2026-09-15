@@ -18,12 +18,16 @@ A mobile-first, bilingual (English default, Russian toggle) training app for ret
 
 ## Data handling
 
-- The spreadsheet is converted once into a JSON file bundled with the app — no backend, instant loading, works offline after first visit.
-- Colour field parsed from `Name (code): URL`; "URL non disponibile" becomes a placeholder card.
-- Styling field split on `|` into looks; garment name + colour code + image captured from each `Name Code (url)` pattern; duplicate repeats, `(nan)`, empty brackets and stray links removed from the visible text.
+- The spreadsheet is converted once into a JSON file bundled with the app — no backend, instant loading, works offline after first visit. (The two model files you sent are identical, so one is used.)
+- **Correct image for every cited model:** the second file `url.xlsx` (837 rows of `Model (colour code)` to image address) becomes the single source of truth. Every garment mentioned in a styling look is matched to that list by model name + colour code and shown with the matching picture, instead of trusting the addresses embedded in the styling text (which are frequently duplicated or attached to the wrong garment).
+- Matching is case- and spacing-insensitive and handles multi-code entries like `Niccioleta (0906 0002)`; if the exact code isn't listed, the app falls back to another colour of the same model, and only then to a placeholder. 70 rows in the list have no address — those show the placeholder.
+- A build-time report lists any cited garment that could not be matched, so gaps are visible rather than silent.
+- Colour field parsed from `Name (code): URL`; also cross-checked against `url.xlsx`, with "URL non disponibile" resolved from the list when possible, otherwise a placeholder card.
+- Styling field split on `|` into looks; garment name + colour code captured from each `Name Code (...)` pattern; duplicate repeats, `(nan)`, empty brackets and all raw links removed from the visible text.
 - Sales advice split on `|`; objections split on `||` and on `[question] -> answer`.
 - 60 rows have no English objection text and 13 have none at all: English view falls back to the Russian text for those rather than showing an empty section.
-- Image links come from an external server; broken images fall back to the placeholder card instead of a broken icon.
+- Images load from an external server; a failed image falls back to the placeholder instead of a broken icon.
+
 
 ## Design
 
