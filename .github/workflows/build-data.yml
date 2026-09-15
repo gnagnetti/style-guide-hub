@@ -14,13 +14,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    steps:- uses: actions/checkout@v4
+  with:
+    fetch-depth: 0
+       
       
       - name: Set up Python
-        uses: actions/setup-python@v5
+       uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       
@@ -33,11 +33,11 @@ jobs:
         run: |
           python3 scripts/build_data.py "risultato_finale (1).xlsx" url.xlsx
       
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git pull --rebase origin main || true
-          git add src/data/
-          git diff-index --quiet HEAD || git commit -m "Auto-generate models data from Excel sources"
-          git push origin main
+       - name: Commit and push changes
+     run: |
+       git config --local user.email "action@github.com"
+       git config --local user.name "GitHub Action"
+       git pull --rebase origin main || true
+       git add src/data/
+       git diff-index --quiet HEAD || git commit -m "Auto-generate models data from Excel sources"
+       git push origin main
