@@ -120,15 +120,15 @@ def split_look_segments(raw):
     out = []
 
     for part in parts:
-        explicit_starts = [m.start() for m in COMBINATION_RE.finditer(part)]
         dash_starts = [m.end() for m in DASH_COMBINATION_RE.finditer(part)]
-        starts = sorted(set(explicit_starts + dash_starts))
-        # A dash immediately before an explicit heading describes the same boundary.
-        combinations = []
-        for start in starts:
-            if combinations and start - combinations[-1] < 4:
-                continue
-            combinations.append(start)
+        explicit_starts = [
+            m.start()
+            for m in COMBINATION_RE.finditer(part)
+            if not any(0 <= m.start() - dash_start <= 120 for dash_start in dash_starts)
+        ]
+        # Prefer the dash boundary when it introduces a descriptive title whose
+        # parenthetical Look/Vetrina label appears later in the same heading.
+        combinations = sorted(set(explicit_starts + dash_starts))
         if len(combinations) < 2:
             out.append(part)
             continue
